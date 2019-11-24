@@ -1,0 +1,272 @@
+/* ## Typographical Elements
+--------------------------------------------- */
+
+html {
+	font-size: 62.5%; /* 10px browser default */
+}
+
+/*
+@media all and (max-width:800px) {
+
+	html {
+		font-size: 45.5%;
+	}
+
+}
+*/
+
+/* Chrome fix */
+/*
+body > div {
+	font-size: 2rem;
+}
+*/
+
+body {
+	//background-color: #eee;
+	color: #333;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 2rem;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 400;
+	line-height: 1.625;
+	margin: 0;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: $gallery-trans;
+	-moz-transition:    $gallery-trans;
+	-ms-transition:     $gallery-trans;
+	-o-transition:      $gallery-trans;
+	transition:         $gallery-trans;
+}
+
+/*.title-area > a {
+	padding: 1rem;
+}*/
+
+/*---EXTEND FOCUS / HOVER VALUES---*/
+
+%focus-hover {
+	color: #333;
+	text-decoration: none;
+}
+
+// focus-hover {
+// 	color: #333;
+// 	text-decoration: none;
+// }
+
+
+
+a {
+	color: #c3251d;
+	text-decoration: underline;
+
+	&:focus {
+		@extend %focus-hover;
+	}
+
+	&:hover {
+		@extend %focus-hover;
+	}
+}
+
+// p {
+// 	margin: 0 0 28px;
+// 	padding: 0;
+// }
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid #eee;
+	clear: both;
+	margin: 1em 0;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+mark {
+	background: #ddd;
+	color: #000;
+}
+
+blockquote {
+	margin: 40px;
+	&::before {
+		content: "\201C";
+		display: block;
+		font-size: 30px;
+		font-size: 3rem;
+		height: 0;
+		left: -20px;
+		position: relative;
+		top: -10px;
+	}
+
+}
+
+/* ## Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	line-height: 1.2;
+	margin: 0 0 10px;
+}
+
+h1 {
+	font-size: 36px;
+	font-size: 3.6rem;
+}
+
+h2 {
+	font-size: 30px;
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+h6 {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.site-inner * {
+	color: #fff;
+}
+
+.jarallax-title {
+
+	z-index: 200;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: red;
+    font-size: 50px;
+    transform: translateX(-50%);
+
+}
+
+.card {
+
+	&-title {
+		text-align:center;
+		margin: 1rem 0;
+		font-size: 45px;
+		
+	}
+
+	&--red-bg > &-title {
+		position:relative;
+		top: 36%;
+	}
+
+	&--blue-bg > p {
+		font-weight: 700;
+	}
+
+	color: #fff;
+}
+
+.mobile-card {
+
+	&-title {
+		text-align:center;
+		margin: 1rem 0;
+		font-size: 25px;
+	}
+
+	&--red-bg > &-title {
+		position:relative;
+		top: 36%;
+		text-shadow: 3px 2px 8px darkred;
+	}
+
+	&--blue-bg > p {
+		font-weight: 700;
+		text-shadow: 1px 2px 1px darkblue;
+	}
+}
+
+
+
+
+
+.odd-letter {
+
+	color: rgba(0, 163, 255, 1);
+
+}
+
+.even-letter {
+
+	color: rgba(253, 56, 25, 1);
+
+}
+
+
+.blue-shadow-text {
+
+	color: white;
+	font-size: 3rem;
+	text-shadow: 2px 2px 4px #00a0ff;
+
+}
+
+.red-shadow-text {
+
+	color: white;
+	font-size: 3rem;
+	text-shadow: 2px 2px 4px #fd3819;
+
+}

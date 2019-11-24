@@ -1,0 +1,148 @@
+
+
+    .mobile-card {
+
+        perspective: 150rem;
+        position: relative;
+    
+        &__side {
+    
+            height: 100%;
+            transition: all .8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    
+        }
+    
+        &__side--red {
+    
+            background-color: #fd3819;
+    
+            z-index:1;
+    
+            & > h2 {
+    
+                font-size: 4rem;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+    
+            }
+    
+            // transform-origin: right;
+    
+        }
+    
+        &__side--blue {
+    
+            background-color: #00a0ff;  
+    
+            transform: rotateY(180deg);
+    
+            // transform-origin:left;
+    
+            & > p {
+    
+                position: relative;
+    
+                // transform: translateY(-15%);
+    
+            }
+    
+        }
+    
+        .flip-red {
+    
+            transform: rotateY(-180deg);
+        
+        }
+    
+        .flip-blue {
+    
+            transform: rotateY(0);
+    
+        }
+        
+    
+    }
+
+
+    @media all and (min-width:769px) { 
+
+        .mobile-card {
+
+            &__side--blue {
+
+                & > p {
+
+                    top: 17%;
+                    
+                    padding: 0 2rem;
+        
+                    font-size: 20px;
+        
+                    font-weight: 500;
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    @media all and (max-width:768px) { 
+
+        .mobile-card {
+
+            &__side--blue {
+
+                & > p {
+
+                    padding: 1rem 2rem;
+                    font-size: 17px;
+                    font-weight: 600;
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    .tap-me-prompt {
+
+        position: absolute;
+        // transform: translateX(-50%);
+        left: 50%;
+        top: 80%;
+        animation-name: sizeitup;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+
+    }
+
+    @keyframes sizeitup {
+
+        from {
+            transform: translateX(-50%) scale(1);
+        }
+
+        to {
+
+            transform: translateX(-50%) scale(1.5);
+
+        }
+
+    }

@@ -1,0 +1,165 @@
+$margin-top: 6rem;
+
+.edfx-toggle-menu {
+
+    z-index: 400;
+    position: fixed;
+    right:0;
+    width: 0;
+    height: 0;
+    background: linear-gradient(to bottom, rgb(188, 229, 254) 90%, rgb(255, 255, 255));
+    transition: all 1000ms ease-in-out;
+    border-bottom: 4px solid #FF855E;
+
+    & > .menu-item {
+        position: absolute;
+        transform: translate(-50%, -50%);
+       
+        font-size: 40px;
+        left: 50%;
+        opacity: 0;
+
+
+        & > a {
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #b02019;
+            color: #FF855E;
+            font-weight: 700;
+        }
+    }
+
+    & > .menu-item:nth-of-type(2) {
+        margin-top: $margin-top;
+    }
+
+    & > .menu-item:nth-of-type(3) {
+        margin-top: $margin-top * 2;
+    }
+
+    & > .menu-item:nth-of-type(4) {
+        margin-top: $margin-top * 3;
+    }
+
+    & > .menu-item:nth-of-type(5) {
+        margin-top: $margin-top * 4;
+    }
+
+    & > .menu-item:nth-of-type(6) {
+        margin-top: $margin-top * 5;
+    }
+    
+   &.is-visible {
+
+    width: 100%;
+    border-bottom: 4px solid #FF855E;
+
+   }
+
+   &.toggle-height {
+
+    height: 100%;
+
+   }
+
+}
+
+.edfx-toggle-button {
+    position: fixed;
+    z-index: 500;
+    right: 0;
+    margin-top: 1.5rem !important;
+    margin-right: 2rem !important;
+    border-radius:100%;
+    background-color: #ff3e02 !important;
+    border: 2px solid #00a0ff !important;
+
+    & .hamburger-box {
+
+        height: 28px !important;
+
+    }
+
+    & .hamburger-inner {
+
+        margin-top: 8%;
+        
+        background-color: #fff !important;
+        cursor: pointer !important;
+        font-size: 16px !important;
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+
+        &:before, &:after {
+
+            background-color: #fff !important;
+           
+        }
+
+    }
+    
+    &:focus {
+     
+        outline:none;
+        
+   }
+}
+
+@media all and (max-width:768px) {
+
+    .edfx-toggle-button  {
+
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+
+    }
+
+}
+
+@media all and (max-width:768px) and (orientation:landscape) {
+
+    .edfx-toggle-menu {
+
+        & > .menu-item {
+
+            top: 20%;
+
+        }
+
+    }
+
+}
+
+@media all and (max-width:768px) and (orientation:portrait) {
+
+    .edfx-toggle-menu {
+
+        & > .menu-item {
+
+            top: 35%;
+
+        }
+
+    }
+
+}
+
+@media all and (min-width:769px) {
+
+    .edfx-toggle-button {
+
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+
+    }
+
+    .edfx-toggle-menu {
+
+        & > .menu-item {
+
+            top: 28%;
+
+        }
+
+    }
+
+}

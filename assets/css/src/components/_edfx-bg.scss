@@ -1,0 +1,17 @@
+.edfx {
+
+    &__bg {
+
+        position:absolute;
+        width: 100%;
+        height: 100vh;
+        background: $edfx-red;
+        transition: 2s all ease-in-out;
+        display:flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+}
