@@ -24,6 +24,8 @@ export const renderMenu = () => {
 
         elem.classList.add('is-visible');
 
+        elem.style.zIndex = 400;
+
         const setHeight = (elem, height) => {
 
             elem.style.height = height;
