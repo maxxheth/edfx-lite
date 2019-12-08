@@ -23,7 +23,7 @@ export const dupeSketchParticlesInstance = SketchParticlesInstance => container 
 
     return newSketchInstance;
 
-}
+};
 
 export const createSketchParticlesInstance = container => (...colors) => (maxParticles = 0) => {
 
@@ -42,10 +42,13 @@ export const createSketchParticlesInstance = container => (...colors) => (maxPar
             var i, x, y;
 
             for (i = 0; i < 20; i++) {
+
                 x = (this.width * 0.5) + random(-100, 100);
                 y = (this.height * 0.5) + random(-100, 100);
                 this.spawn(x, y);
+            
             }
+        
         },
 
         spawn(x, y) {
@@ -69,6 +72,7 @@ export const createSketchParticlesInstance = container => (...colors) => (maxPar
             particle.vy = cos(theta) * force;
 
             this.particles.push(particle);
+        
         },
 
         update() {
@@ -81,7 +85,9 @@ export const createSketchParticlesInstance = container => (...colors) => (maxPar
 
                 if (particle.alive) particle.move();
                 else this.pool.push(this.particles.splice(i, 1)[0]);
+            
             }
+        
         },
 
         draw() {
@@ -89,8 +95,11 @@ export const createSketchParticlesInstance = container => (...colors) => (maxPar
             this.globalCompositeOperation = 'lighter';
 
             for (var i = this.particles.length - 1; i >= 0; i--) {
+
                 this.particles[i].draw(this);
+            
             }
+        
         },
 
         mousemove() {
@@ -101,10 +110,13 @@ export const createSketchParticlesInstance = container => (...colors) => (maxPar
 
                 touch = this.touches[i], max = random(1, 4);
                 for (j = 0; j < max; j++) {
+
                     this.spawn(touch.x, touch.y);
+                
                 }
 
             }
+        
         }
         
 

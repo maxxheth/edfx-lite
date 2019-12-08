@@ -1,17 +1,17 @@
-import makeWaterRipples from './makeWaterRipples';
+import makeWaterRipples from './makeWaterRipplesOld';
 
 // import {WaterModel, WaterCanvas} from './waterRippleFactory';
 
 
-const waterRippleInit = (...homeSectionIds) => {
+const waterRippleInit = homeSections => {
 
-    const homeSectionCanvasSets = homeSectionIds.map((ID, IDIndex) => {
+    const homeSectionCanvasSets = homeSections.map((homeSection, homeIndex) => {
 
         const homeSectionCanvas = document.createElement('canvas');
 
-        homeSectionCanvas.id = 'home-section-canvas-0' + (IDIndex + 1);
+        homeSectionCanvas.id = 'home-section-canvas-0' + (homeIndex + 1);
 
-        const homeSection = document.getElementById(ID);
+        // const homeSection = document.getElementById(ID);
 
         homeSection.appendChild(homeSectionCanvas);
 
@@ -26,9 +26,11 @@ const waterRippleInit = (...homeSectionIds) => {
             homeSectionWidth: getComputedStyle(homeSection).width,
             homeSectionHeight: getComputedStyle(homeSection).height
 
-        }
+        };
 
     });
+
+    console.log({homeSectionCanvasSets: homeSectionCanvasSets});
 
     // const firstHomeSection = document.getElementById(homeSectionIds[0]);
 
@@ -47,7 +49,7 @@ const waterRippleInit = (...homeSectionIds) => {
 
         makeWaterRipples
 
-            (homeSectionCanvas)
+        (homeSectionCanvas)
 
         (homeSectionBackgroundImgUrl)
 

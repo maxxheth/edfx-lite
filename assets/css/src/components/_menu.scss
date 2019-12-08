@@ -1,57 +1,129 @@
-$margin-top: 6rem;
+$margin-top: 7rem;
+
+// .hamburger {
+//     @media all and (max-width:992px) {
+
+//         opacity: 0.2 !important;
+
+//     }
+// }
 
 .edfx-toggle-menu {
 
-    z-index: 400;
+    z-index: -1;
     position: fixed;
     right:0;
     width: 0;
     height: 0;
-    background: linear-gradient(to bottom, rgb(188, 229, 254) 90%, rgb(255, 255, 255));
-    transition: all 1000ms ease-in-out;
-    border-bottom: 4px solid #FF855E;
+    // background: linear-gradient(to bottom, rgb(188, 229, 254) 90%, rgb(255, 255, 255));
+    background: $edfx_red;
+    transition: all 0.2s ease-in-out;
+    // border-bottom: 4px solid #FF855E;
 
-    & > .menu-item {
+    &__item {
+
         position: absolute;
         transform: translate(-50%, -50%);
-       
         font-size: 40px;
+        top: 25%;
         left: 50%;
         opacity: 0;
 
-
         & > a {
             text-decoration: none;
-            text-shadow: 1px 1px 1px #b02019;
-            color: #FF855E;
+            font-size: 5rem;
+            position: relative;
+            // text-shadow: 1px 1px 1px #b02019;
+            color: #fff;
             font-weight: 700;
+            font-family: 'Oswald', sans-serif;
         }
+
+        &--slide {
+
+            position: fixed;
+            background-size: cover;
+            opacity: 0;
+            z-index: 399;
+            width: 0%;
+            height: 0%;
+            transition: all 0.2s ease-in-out;
+
+            animation: 10s linear 0s infinite alternate kenBurns;
+
+            &:nth-child(even) {
+
+                // background-color: $edfx_blue;
+                background-blend-mode: multiply;  
+
+            }
+
+            &:nth-child(odd) {
+
+                // background-color: $edfx_red;
+                background-blend-mode: multiply;  
+
+            }
+
+            &[data-menu-item-slide="home"] {
+               
+                //background-color: $edfx_blue;
+                background-image: url(/images/deep-ellum-smiley-face-1.jpg);
+                           
+
+            }
+
+            &[data-menu-item-slide="about"] {
+               
+                //background-color: $edfx_red;
+                background-image: url(/images/headway-537308-unsplash-1024x683.jpg);
+                          
+
+            }
+
+            &[data-menu-item-slide="portfolio"] {
+               
+                //background-color: $edfx_blue;
+                background-image: url(/images/igor-miske-207639-unsplash-1024x591.jpg);
+                       
+
+            }
+
+            &--negative {
+
+                background-color: #000;
+                z-index: 398;
+
+            }
+
+        }
+
     }
 
-    & > .menu-item:nth-of-type(2) {
+    &__item:nth-of-type(2) {
         margin-top: $margin-top;
     }
 
-    & > .menu-item:nth-of-type(3) {
+    &__item:nth-of-type(3) {
         margin-top: $margin-top * 2;
     }
 
-    & > .menu-item:nth-of-type(4) {
+    &__item:nth-of-type(4) {
         margin-top: $margin-top * 3;
     }
 
-    & > .menu-item:nth-of-type(5) {
+    &__item:nth-of-type(5) {
         margin-top: $margin-top * 4;
     }
 
-    & > .menu-item:nth-of-type(6) {
+    &__item:nth-of-type(6) {
         margin-top: $margin-top * 5;
     }
     
    &.is-visible {
 
     width: 100%;
-    border-bottom: 4px solid #FF855E;
+    border-bottom: 4px solid $edfx_blue;
 
    }
 
@@ -119,7 +191,7 @@ $margin-top: 6rem;
 
     .edfx-toggle-menu {
 
-        & > .menu-item {
+        &__item {
 
             top: 20%;
 
@@ -133,7 +205,7 @@ $margin-top: 6rem;
 
     .edfx-toggle-menu {
 
-        & > .menu-item {
+        &__item {
 
             top: 35%;
 
@@ -159,6 +231,22 @@ $margin-top: 6rem;
             top: 28%;
 
         }
+
+    }
+
+}
+
+@keyframes kenBurns {
+
+    from {
+
+        transform: scale(1);
+
+    }
+
+    to {
+
+        transform: scale(1.5)
 
     }
 

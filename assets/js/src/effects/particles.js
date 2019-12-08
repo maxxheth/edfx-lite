@@ -15,6 +15,7 @@ const createParticle = () => ({
 
         this.vx = 0.0;
         this.vy = 0.0;
+    
     },
 
     move() {
@@ -31,6 +32,7 @@ const createParticle = () => ({
 
         this.radius *= 0.96;
         this.alive = this.radius > 0.5;
+    
     },
 
     draw( ctx ) {
@@ -39,6 +41,7 @@ const createParticle = () => ({
         ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
         ctx.fillStyle = this.color;
         ctx.fill();
+    
     }
     
 });

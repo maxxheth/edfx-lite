@@ -1,6 +1,6 @@
 const getParallaxElems = elemClass => [...document.querySelectorAll(`.${elemClass}`)];
 
-const newPos = (pos, adjust, ratio) => ((pos - adjust) * ratio)  + "px";
+const newPos = (pos, adjust, ratio) => ((pos - adjust) * ratio)  + 'px';
 
 const containerize = parallaxElems => {
 
@@ -44,7 +44,7 @@ const move = (parallaxElems, parallaxRange) => {
 
     parallaxElems.forEach((elem, elemIndex) => elem.style.top = newPos(pos, 0, -(parallaxRange / elemIndex)));
         
-}
+};
 
 const runParallax = (parallaxElemClass, parallaxRange) => {
 
@@ -57,10 +57,14 @@ const runParallax = (parallaxElemClass, parallaxRange) => {
     window.addEventListener('scroll', () => didScroll = true);
      
     setInterval(() => {
+
         if (didScroll) {
+
             didScroll = false;
             move(parallaxElems, parallaxRange);
+        
         }
+    
     }, 10);
 
 };

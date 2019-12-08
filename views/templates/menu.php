@@ -10,35 +10,35 @@ function loadMenu() {
 
     $menu_items = array(
 
-        'home' => array(
+         array(
             'link' => '/',
             'name' => 'Home'
         ),
-        'about' => array(
+        array(
             'link' => '/about',
             'name' => 'About'
         ),
-        'portfolio' => array(
+        array(
             'link' => '/portfolio',
             'name' => 'Portfolio'
         ),
-        'services' => array(
+        array(
             'link' => '/services',
             'name' => 'Services'
 
         ),
-        'blog' => array(
+        array(
             'link' => '/blog',
             'name' => 'Blog'
         ),  
-        'contact' => array(
+        array(
             'link' => '/contact',
             'name' => 'Contact'
         )
 
     );
 
-
+    $menu_items_int = array_map('intval', $menu_items);
 
     ?>
 
@@ -46,14 +46,24 @@ function loadMenu() {
 
             <ul class="edfx-toggle-menu">
 
-                <?php foreach($menu_items as $menu_item) : ?>
+                <?php foreach($menu_items as $menu_item_index => $menu_item) : ?>
 
-                    <li class="menu-item"><a href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $menu_item['link']; ?>" rel="noopener noreferrer"><?php echo $menu_item['name']; ?></a></li>
+                    <?php $isEven = $menu_item_index % 2 == 0; ?>
+
+                    <li class="edfx-toggle-menu__item"><a class="edfx-toggle-menu__link" href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $menu_item['link']; ?>" data-menu-item-color="<?php echo $isEven ? 'blue' : 'red'; ?>" data-menu-item-even-check="<?php echo  $menu_item_index; ?>" data-menu-item-name="<?php echo strtolower($menu_item['name']) ?>" rel="noopener noreferrer"><?php echo $menu_item['name']; ?></a></li>
 
                 <?php endforeach; ?>
 
+                
             </ul>
 
+            <?php foreach($menu_items as $menu_item) : ?>
+
+<div class="edfx-toggle-menu__item--slide" data-menu-item-slide="<?php echo strtolower($menu_item['name']); ?>"></div>
+
+<?php endforeach; ?>
+
+<div class="edfx-toggle-menu__item--slide edfx-toggle-menu__item--slide--negative"></div>
         </nav>
 
     <?php

@@ -1,4 +1,4 @@
-export const renderMenu = () => {
+const renderMenu = () => {
 
     const docElemStyle = document.documentElement.style;
     const transitionProp = typeof docElemStyle.transition == 'string' ? 'transition' : 'WebkitTransition';
@@ -14,8 +14,39 @@ export const renderMenu = () => {
     // let tlIn = new TimelineLite(),
     //     tlOut = new TimelineLite();
 
+    [...menuContent.children].filter(child => child.tagName === 'LI')
+        
+        .forEach(child => child.style.transition = '0.2s all ease-in-out');
 
-    [...menuContent.children].forEach(child => child.style.transition = '0.2s all ease-in-out');
+    const menuItemSlides = [...document.querySelectorAll('.edfx-toggle-menu__item--slide')];
+
+    const prepMenuItemSlide = menuItemSlides => (doShow = true) => {
+
+        menuItemSlides.forEach(slide => {
+
+            if (doShow) {
+
+                Object.assign(slide.style, {
+
+                    width: '100%',
+                    height: '100%',
+
+                });
+
+            } else {
+
+                Object.assign(slide.style, {
+
+                    width: '0%',
+                    height: '0%'
+
+                });
+
+            }
+
+        });
+
+    };
 
     // Show an element
     const show = elem => {
@@ -30,25 +61,25 @@ export const renderMenu = () => {
 
             elem.style.height = height;
 
-        }
+        };
 
         setTimeout(() => {
+
             // Make the element visible
+
             elem.style.height = '100%'; // Update the max-height
 
             const prepToggle = setHeight(elem, '100%');
 
             setTimeout(prepToggle, 700);
 
-            
-
-        }, 1000);
+        }, 700);
 
         setTimeout(() => {
 
             toggleMenuChildren(menuContent)(true)(false);
 
-        }, 1400);
+        }, 1100);
 
     };
 
@@ -58,19 +89,13 @@ export const renderMenu = () => {
 
         elems.forEach((elem, elemIndex) => {
 
-            elem.style[ transitionProp + 'Delay' ] = ( elemIndex * 50 ) + 'ms';
+            elem.style[transitionProp + 'Delay'] = (elemIndex * 50) + 'ms';
 
             elem.style[styleProp] = styleValue;
 
-        }); 
+        });
 
-        // for ( var i=0; i < items.length; i++ ) {
-        //   var item = items[i];
-        //   // stagger transition with transitionDelay
-        //   item.style[ transitionProp + 'Delay' ] = ( i * 50 ) + 'ms';
-        //   item.classList.toggle('is-moved');
-        // }
-      };
+    };
 
     // Hide an element
     const hide = elem => {
@@ -80,19 +105,25 @@ export const renderMenu = () => {
 
         toggleMenuChildren(menuContent)(false)(() => {
 
-            elem.style.height = '0';
-
             setTimeout(() => {
 
-                elem.classList.remove('is-visible');
+                elem.style.height = 0;
 
-            }, 800);
+            }, 400);
 
             setTimeout(() => {
 
                 elem.style.opacity = 0;
 
             }, 1200);
+
+            setTimeout(() => {
+
+                elem.classList.remove('is-visible');
+
+                elem.style.zIndex = -1;
+
+            }, 1600);
 
         });
 
@@ -101,25 +132,51 @@ export const renderMenu = () => {
 
     const toggleMenuChildren = menuElem => isActive => callback => {
 
-        const menuChildren = [...menuElem.children];
+        const menuChildren = [...menuElem.children]
+
+            .filter(child => child.tagName === 'LI');
+
+        console.log(menuChildren);
 
 
-        if (!!isActive) {
+        if (isActive) {
 
-            // return tlIn.staggerTo(menuChildren, 0.2, {
-            //     opacity: 1
-            // }, 0.05, '-=0.1');
+            menuChildren.forEach(child => {
+
+                if (child.firstChild.tagName === 'A') {
+
+                    if (child.firstChild.style.zIndex) {
+
+                        child.firstChild.style.removeProperty('z-index');
+
+                    }
+
+                }
+
+            });
 
             staggerElemStyleProps(menuChildren)('opacity')(1);
 
 
         } else {
 
-            // return tlOut.staggerTo(menuChildren, 0.2, {
-            //     opacity: 0
-            // }, 0.05, '-=0.1');
+            menuChildren.forEach(child => {
+
+                if (child.firstChild.tagName === 'A') {
+
+                    if (!child.firstChild.style.zIndex) {
+
+                        child.firstChild.style.zIndex = '-1';
+
+                    }
+
+                }
+
+            });
+
 
             staggerElemStyleProps(menuChildren)('opacity')(0);
+
         }
 
         if (callback) callback();
@@ -139,11 +196,15 @@ export const renderMenu = () => {
 
                     show(menuContent);
 
+                    prepMenuItemSlide(menuItemSlides)(true);
+
                 } else if (event.target.classList.contains('is-active')) {
 
                     event.target.classList.remove('is-active');
 
                     hide(menuContent);
+
+                    prepMenuItemSlide(menuItemSlides)(false);
 
                 }
 
@@ -157,11 +218,15 @@ export const renderMenu = () => {
 
                     show(menuContent);
 
+                    prepMenuItemSlide(menuItemSlides)(true);
+
                 } else if (event.target.parentElement.classList.contains('is-active')) {
 
                     event.target.parentElement.classList.remove('is-active');
 
                     hide(menuContent);
+
+                    prepMenuItemSlide(menuItemSlides)(false);
 
                 }
 
@@ -175,15 +240,19 @@ export const renderMenu = () => {
 
                     show(menuContent);
 
+                    prepMenuItemSlide(menuItemSlides)(true);
+
                 } else if (event.target.parentElement.parentElement.classList.contains('is-active')) {
 
                     event.target.parentElement.parentElement.classList.remove('is-active');
 
                     hide(menuContent);
 
+                    prepMenuItemSlide(menuItemSlides)(false);
+
                 }
-            
-            break;
+
+                break;
 
         }
 
@@ -191,7 +260,7 @@ export const renderMenu = () => {
 
     const togglePrep = (event) => {
 
-        const removeEventListenerDelay = 2000;
+        const removeEventListenerDelay = 1000;
 
         switch (event.target) {
 
@@ -245,3 +314,5 @@ export const renderMenu = () => {
     document.addEventListener('click', togglePrep, true);
 
 };
+
+export default renderMenu;

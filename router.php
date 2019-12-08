@@ -5,35 +5,61 @@ ini_set('display_errors', 1);
 
 $request = $_SERVER['REQUEST_URI'];
 
-require __DIR__ . '/markdown-blog-router.php';
+$root_uri = $_SERVER['SERVER_NAME'];
 
-switch ($request) {
-    case '/' :
-        require __DIR__ . '/views/home.php';
-        break;
-    case '' :
-        require __DIR__ . '/views/home.php';
-        break;
-    case '/about' :
-        require __DIR__ . '/views/about.php';
-        break;
-    case '/services':
-        require __DIR__ . '/views/services.php';
-        break;
-    case '/portfolio':
-        require __DIR__ . '/views/portfolio.php';
-        break;
-    case '/blog':
-        require __DIR__ . '/views/blog.php';
-        break;
-    case '/contact':
-        require __DIR__ . '/views/contact.php';
-        break;
-    case '/blog/hello-world': 
-        renderMarkdownPost('hello-world');
-        break;
-    default:
-        require __DIR__ . '/views/404.php';
-        break;
+$header = $_SERVER['REQUEST_SCHEME'] . '://';
+
+$rool_url = $header . $root_uri;
+
+require_once __DIR__ . '/views/templates/header.php';
+
+require_once __DIR__ . '/views/templates/footer.php';
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+require_once __DIR__ . '/helper_funcs/markdown-blog-router.php';
+
+$routingData = json_decode(file_get_contents(__DIR__ . '/routing-data.json'), true);
+
+foreach($routingData as $routeKey => $routingDataset) {
+
+    preg_match('/^\/(blog)\/\w+/', $routingDataset['requestURI'], $matches);
+
+    /**
+     * If there are no matches containing the blog slug,
+     * then test to see if the request matches the request URI property 
+     * of the current $routingDataset array.
+     * 
+     * If true, serve the PHP file for that route and break the loop.
+     * 
+     * If there's a match containing the blog slug, strip it and 
+     * pass the remaining URL slug to the renderMarkdownPost function,
+     * which will fetch the corresponding Markdown file and render it. 
+     * 
+     */
+
+    if (!count($matches) > 0) { 
+
+        if ($request == $routingDataset['requestURI']) {
+
+            require __DIR__ . $routingDataset['routeFileDir'];
+
+            break;
+
+        }
+
+    } else {
+
+        if ($request == $routingDataset['requestURI']) {
+
+            $blogPostSlug = preg_replace('/\/(blog)\//', '', $routingDataset['requestURI']);
+        
+            renderMarkdownPost($blogPostSlug);
+
+            break;
+
+        }
+
+    }
+
 }
-

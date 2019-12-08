@@ -75,9 +75,13 @@ const canvasDoodle = canvasSelector => ({
             context.beginPath();
 
             if (clickDragEvents[i] && i) {
+
                 context.moveTo(clickXEvents[i - 1], clickYEvents[i - 1]);
+            
             } else {
+
                 context.moveTo(clickXEvents[i] - 1, clickYEvents[i]);
+            
             }
 
             context.lineTo(clickXEvents[i], clickYEvents[i]);
@@ -85,8 +89,10 @@ const canvasDoodle = canvasSelector => ({
             context.closePath();
 
             context.stroke();
+        
         }
-    }
+    
+    };
 
     const manageClickRecord = (clickRecord = {}) => ({
         mouseX,
@@ -130,7 +136,7 @@ const canvasDoodle = canvasSelector => ({
                     clickX: mouseX,
                     clickY: mouseY,
 
-                })
+                });
 
             } else {
 
@@ -144,7 +150,7 @@ const canvasDoodle = canvasSelector => ({
                     clickY: mouseY,
                     clickDrag: mouseDrag
 
-                })
+                });
 
             }
 
@@ -191,11 +197,11 @@ const canvasDoodle = canvasSelector => ({
             mouseY
         });
 
-        if (!!canvasState.clickRecord) {
+        if (canvasState.clickRecord) {
 
             redraw({
-                strokeStyle: "#df4b26",
-                lineJoin: "round",
+                strokeStyle: '#df4b26',
+                lineJoin: 'round',
                 lineWidth: 5
             })
             
@@ -227,11 +233,11 @@ const canvasDoodle = canvasSelector => ({
                 mouseDrag: true
             });
 
-            if (!!canvasState.clickRecord) {
+            if (canvasState.clickRecord) {
 
                 redraw({
-                    strokeStyle: "#df4b26",
-                    lineJoin: "round",
+                    strokeStyle: '#df4b26',
+                    lineJoin: 'round',
                     lineWidth: 5
                 })
                 

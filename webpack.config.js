@@ -1,32 +1,40 @@
 const path = require('path');
 
-const autoprefixer = require('autoprefixer');
+const fs = require('fs');
 
 module.exports = {
     entry: {
 		home: './assets/js/src/pages/home.js',
 		about: './assets/js/src/pages/about.js',
-		portfolio: './assets/js/src/pages/portfolio.js'
-	},
+        portfolio: './assets/js/src/pages/portfolio.js',
+        services: './assets/js/src/pages/services.js'
+    },
+    mode: 'production',
     devtool: 'source-map',
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: [{
-                        loader: 'file-loader'
+                test: /\.scss|\.css$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '../../css/dist/bundle.css',
+                            sourceMap:true
+                        },
                     },
                     {
                         loader: 'extract-loader'
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                    
+                        options: {
+                            import: true
+                        }
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: () => [autoprefixer()]
-                        }
+                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'sass-loader',
@@ -35,16 +43,22 @@ module.exports = {
                             sassOptions: {
                                 
                                 includePaths: ['./node_modules'],
+                                // sourceMap: true
 
                             }
 
                         },
                     }
+                    
                 ],
             },
 			{
-				test: /\.js$/,
-				exclude: /(node_modules)/,
+                test: /\.js$/,
+                include: [
+                    path.resolve(__dirname, "node_modules/jarallax"),
+                    path.resolve(__dirname, "node_modules/video-worker"),
+                    path.resolve(__dirname, "assets/js/src")
+                ],
 				use: {
 					loader: 'babel-loader',
 					options: {
@@ -52,19 +66,24 @@ module.exports = {
 							['@babel/preset-env', {
 								useBuiltIns: 'usage',
 								corejs: 3,
-								shippedProposals: true
-							}]
-						],
+                                shippedProposals: true
+
+                                // targets: {
+                                //     "browsers": ["last 3 versions", "ie >= 11"]
+                                // }
+                            }]
+                        ],
 						cacheDirectory: false
 					}
 				}
 			}
         ]
     },
-    // watch: true,
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, './assets/js/dist')
+        path: path.resolve(__dirname, './assets/js/dist'),
     },
-
+    optimization: {
+        usedExports: true
+    }
 };

@@ -7,7 +7,7 @@ const waterRippleInit = (...homeSectionIds) => {
 
         if (!document.getElementById(ID))
 
-            throw Error("Pass only elements with ID attributes, please!");
+            throw Error('Pass only elements with ID attributes, please!');
 
     });
 

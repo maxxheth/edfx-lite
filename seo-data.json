@@ -1,0 +1,42 @@
+{
+    "pages": {
+        "home": {
+            "title" : "Home Page Title",
+            "metaDescription": "This is the home page meta description."
+        },
+        "about": {
+            "title": "About Page Title",
+            "metaDescription": "This is the about meta description."
+        },
+        "services" : {
+            "title": "Services Page Title",
+            "metaDescription": "This is the services meta description."
+        },
+        "portfolio": {
+            "title" : "Portfolio Page Title",
+            "metaDescription": "This is the portfolio page meta description."
+        },
+        "blog": {
+            "title": "Blog Page Title",
+            "metaDescription": "This is the blog page meta description"
+        },
+        "contact": {
+            "title": "Contact Page Title",
+            "metaDescription": "This is the contact page meta description."
+        }
+    }, 
+    "posts": {
+        "hello-world": {
+            "title": "Hello World Page Title",
+            "metaDescription" : "This is the hello world meta description."
+        },
+        "hola-mundo": {
+            "title": "Hola Mundo Page Title",
+            "metaDescription": "This is the meta description for the Hola Mundo test article."
+        },
+        "hallo-welt": {
+            "title": "Hallo Welt Page Title",
+            "metaDescription": "This is the meta description for the Hallo Welt test page."
+        }
+    }
+}

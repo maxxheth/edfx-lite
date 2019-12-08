@@ -1,38 +1,114 @@
 .intro-button {
 
-	//box-shadow: 0px 6px 8px 0px #a9d6ef;
-	background:linear-gradient(to bottom, #fa3319 5%, #c02c3d 100%);
-	background-color:#fa3319;
-	border-radius:18px;
-	border:1px solid #d02718;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:2rem;
-	text-decoration:none;
-	//text-shadow:0px 1px 0px #810e05;
-	//position: absolute;
+    //box-shadow: 0px 6px 8px 0px #a9d6ef;
+    background: linear-gradient(to bottom, #fa3319 5%, #c02c3d 100%);
+    background-color: #fa3319;
+    border-radius: 18px;
+    border: 1px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 2rem;
+    text-decoration: none;
+    //text-shadow:0px 1px 0px #810e05;
+    //position: absolute;
     font-weight: 800;
     font-size: 20px;
     white-space: nowrap;
     cursor: pointer;
     text-transform: uppercase;
     position: relative;
+    
+    // color: green; // JUST FOR TESTING!
 
     &:hover {
-	    background:linear-gradient(to bottom, #c02c3d 5%, #fa3319 100%);
-		background-color:#c02c3d;
+        background: linear-gradient(to bottom, #c02c3d 5%, #fa3319 100%);
+        background-color: #c02c3d;
     }
 
     &:active {
-	    position:relative;
-		top:1px;
+        position: relative;
+        top: 1px;
     }
 
     &:focus {
-	    position:relative;
-		top:1px;
+        position: relative;
+        top: 1px;
     }
+}
+
+/* Ripple effect */
+.edfx-ripple {
+
+    background-position: center;
+    transition: background 0.8s;
+
+    position:relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    & > a {
+            
+        color: #fff !important;
+        text-decoration: none;
+
+    }
+
+    &--blue {
+        
+        
+
+        background: #00a0ff !important;
+        
+        &:hover {
+
+            background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+
+        }
+
+    }
+    
+    &--red {
+
+       
+
+        background: #fd3819; 
+        
+        &:hover {
+    
+            background: #e01e00 radial-gradient(circle, transparent 1%, #e01e00 1%) center/15000%;
+    
+        }
+
+
+    }
+
+    // 
+
+
+
+    &:active {
+
+        background-color: #6eb9f7;
+        background-size: 100%;
+        transition: background 0s;
+
+    }
+}
+
+/* Button style */
+button {
+    border: none;
+    border-radius: 2px;
+    padding: 12px 18px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background-color: #2196f3;
+    box-shadow: 0 0 4px #999;
+    outline: none;
 }

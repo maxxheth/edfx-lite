@@ -1,6 +1,6 @@
 export const changeBgColor = elem => (...colors) => interval => {
 
-	let count = 0;
+    let count = 0;
 
     setInterval(() => {
 
@@ -12,7 +12,7 @@ export const changeBgColor = elem => (...colors) => interval => {
 
         } else {
 
-			if (count > -1) {
+            if (count > -1) {
 
                 count--;
 

@@ -1,0 +1,38 @@
+{
+
+    "home" : { 
+        "requestURI": "/",
+        "routeFileDir": "/views/home.php" 
+    },
+    "about": {
+        "requestURI": "/about",
+        "routeFileDir": "/views/about.php" 
+    },
+    "portfolio": {
+        "requestURI": "/portfolio",
+        "routeFileDir": "/views/portfolio.php"
+    },
+    "services": {
+        "requestURI": "/services",
+        "routeFileDir": "/views/services.php"
+    },
+    "blog": {
+        "requestURI": "/blog",
+        "routeFileDir": "/views/blog.php"
+    },
+    "contact": {
+        "requestURI": "/contact",
+        "routeFileDir": "/views/contact.php"
+    },
+    "hello-world": {
+        "requestURI": "/blog/hello-world"
+    },
+    "hola-mundo": {
+        "requestURI": "/blog/hola-mundo"
+    },
+    "hallo-welt": {
+        "requestURI": "/blog/hallo-welt"
+    }
+
+        
+}

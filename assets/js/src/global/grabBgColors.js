@@ -8,6 +8,6 @@ const grabBgColors = regexStr => {
 
     return newRegexStr;
 
-}
+};
 
 export default grabBgColors;

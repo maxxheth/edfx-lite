@@ -84,47 +84,6 @@
 	box-shadow: 1px 0 0 #000;
 }
 
-.card {
-
-	padding: 1rem;
-	margin-bottom: 4rem;
-    height: 100%;
-    position: absolute !important;
-
-    transition: 0.8s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
-	// &--shadowing {
-
-	// 	box-shadow: 6px 6px 7px #979797;
-
-	// }
-
-	& p {
-		// padding: 0 9rem;
-		font-size: 20px;
-	}
-
-	&--blue-bg {
-		background-color: rgb(0, 160, 255);
-		position: relative;
-		padding: 6rem 6rem;
-
-		&>p {
-
-			position: relative;
-
-			// top: 25%;
-			// transform: translateY(-25%);
-
-		}
-	}
-
-	&--red-bg {
-		background-color: rgb(253, 56, 25);
-	}
-
-}
-
 @media all and (max-width:768px) and (orientation: portrait) {
 
 	.static-bg-img {
@@ -589,46 +548,37 @@ p.entry-meta {
 
 .home-section {
 
-	// scroll-snap-align: center;
+	
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	// justify-content: space-between;
 	padding: 0;
 	position: relative;
 	top: 0;
 	background-size: cover;
-	// height: fit-content;
-	// height: webkit-fill-available;
+	
 
 	&-01 {
         
         background:  url(/images/Dallas-Skyline.jpg) 2% 32% / cover no-repeat  rgb(255, 61, 5);
-        
-        background-blend-mode: color-dodge;
 
 	}
 
 	&-02 {
 
-        background:  url(/images/downtown_dallas.jpg) 2% 32% / cover no-repeat  rgb(0, 160, 255);
-    
-        background-blend-mode: color-dodge;
-
+        background:  url(/images/deep-ellum-smiley-face_compressed.jpg) 2% 32% / cover no-repeat  rgb(0, 160, 255);
+		
 	}
 
 	&-03 {
 
         background:  url(/images/downtown_dallas_skyline_night.jpg) 2% 32% / cover no-repeat  rgb(255, 61, 5);
-    
-        background-blend-mode: color-dodge;
-
+		
 	}
 
 	&-04 {
         
-        background:  url(/images/deep-ellum.jpg) 2% 32% / cover no-repeat  rgb(0, 160, 255);
-    
-        background-blend-mode: color-dodge;
+        background:  url(/images/deep-ellum-smiley-face.png) 2% 32% / cover no-repeat  rgb(0, 160, 255);
 
 	}
 
@@ -636,15 +586,11 @@ p.entry-meta {
 
         background:  url(/images/downtown_dallas_skyline_night.jpg) 2% 32% / cover no-repeat  rgb(255, 61, 5);
     
-        background-blend-mode: color-dodge;
-
 	}
 
 	&-06 {
         
         background:  url(/images/deep-ellum.jpg) 2% 32% / cover no-repeat  rgb(0, 160, 255);
-    
-        background-blend-mode: color-dodge;
 
 	}
 
@@ -652,7 +598,9 @@ p.entry-meta {
 	&-04,
 	&-06 {
 
-		flex-flow: row-reverse;
+        flex-flow: row-reverse;
+       
+        // border: 2px solid fuchsia;
 
 	}
 
@@ -662,7 +610,7 @@ p.entry-meta {
 
 // $webkit_fill_available_height: 'webkit-fill-available';
 
-$full_height: 400px;
+$full_height: 450px;
 
 @media all and (max-width:900px) {
 
@@ -680,7 +628,7 @@ $full_height: 400px;
 
 			display: block;
 			width: 100vw;
-			height:75vh;
+			height:100vh;
 
 		}
 
