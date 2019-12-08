@@ -4,15 +4,51 @@ const browsersync = require('browser-sync').create();
 
 const reload = browsersync.reload;
 
-browsersync.watch('*.php').on('change', reload);
+const onChangePaths = [
+    
+    {
+        fileDir: '*.php',
+        event: 'change'
+    },
+    {
+        fileDir: './helper_funcs/*.php',
+        event: 'change'
+    },
+    {
+        fileDir: './views/*.php',
+        event: 'change'
+    },
+    {
+        fileDir: './views/templates/*.php',
+        event: 'change'
+    },
+    {
+        fileDir: './assets/js/dist/*.js',
+        event: 'change'
+    },
+    {
+        fileDir: '*.php',
+        event: 'change'
+    },
+    {
+        fileDir: './assets/css/dist/*.css',
+        event: 'change'
+    },
+    {
+      fileDir: '*.json',
+      event: 'change'  
+    },
 
-browsersync.watch('./views/*.php').on('change', reload);
 
-browsersync.watch('./views/templates/*.php').on('change', reload);
+];
 
-browsersync.watch('./assets/js/dist/*.js').on('change', reload);
+onChangePaths.forEach(pathObj => {
 
-browsersync.watch('./assets/css/dist/*.css').on('change', reload);
+    const {fileDir, event} = pathObj;
+
+    browsersync.watch(fileDir).on(event, reload);
+
+});
 
 browsersync.init({
 
@@ -23,11 +59,3 @@ browsersync.init({
     }
 
 });
-
-/* setInterval(() => {
-
-    console.clear();
-
-    reload();
-
-}, 60 * 30000); */
