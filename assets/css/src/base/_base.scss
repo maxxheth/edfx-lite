@@ -326,7 +326,7 @@ input[type="search"] {
 
 body {
 	overflow-x: hidden;
-	scroll-behavior: smooth;
+	// scroll-behavior: smooth;
 }
 
 video {
@@ -337,13 +337,26 @@ video {
 
 }
 
-#dallas-aerial-footage {
+/*---LOGO---*/
 
-	min-height: 100vh;
-	width: 100vw;
-	object-fit: cover;
+// #edfx-logo {
+// 	width:51%;
+// }
 
-}
+
+
+@import url('~simplebar/src/simplebar.css');
+
+// @import '../../../../node_modules/simplebar/dist/simplebar.css;
+
+
+// #dallas-aerial-footage {
+
+// 	min-height: 100vh;
+// 	width: 100vw;
+// 	object-fit: cover;
+
+// }
 
 // @media all and (max-width:1000px) {
 
