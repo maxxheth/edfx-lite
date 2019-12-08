@@ -3,9 +3,6 @@
 error_reporting(-1);
 ini_set('display_errors', 1);
 
-require __DIR__ . '/templates/header.php';
-require __DIR__ . '/templates/footer.php';
-
 ?> 
 
 <?php get_header(); ?>
