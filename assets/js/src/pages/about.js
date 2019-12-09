@@ -18,6 +18,6 @@ renderMenu();
 
 footerLinkAnimation();
 
-swapBGMenuSlide();
+swapBGMenuSlide(2000);
 
 // changeBgColor(edfxBg)('#00a0ff','#fd3819')(10000);

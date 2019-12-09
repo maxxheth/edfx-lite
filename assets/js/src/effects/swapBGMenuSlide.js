@@ -1,10 +1,8 @@
 import EDFXColors from '../global/globalVars';
 
-const { EDFXRed, EDFXBlue } = EDFXColors;
+const { EDFXRed, EDFXBlue, EDFXBlueLight, EDFXOrange } = EDFXColors;
 
-const slides = [...document.querySelectorAll('.edfx-toggle-menu__item--slide')];
-
-const swapBGMenuSlide = () => {
+const swapBGMenuSlide = (hideSiteContainerDelay = 0) => {
 
     const menuItemSlides = [...document.querySelectorAll('.edfx-toggle-menu__item--slide')]
     
@@ -18,17 +16,33 @@ const swapBGMenuSlide = () => {
 
     // document.addEventListener('click', e => {
 
-    const hideSiteContainer = (doHide = true) => {
+    const hideSiteContainer = (doHide = true, delay = 0) => {
 
-        if (doHide) {
+        const doHideSwitch = () => {
+
+            if (doHide) {
             
-            siteContainer.style.opacity = 0;
-        
-        } else {
-
-            siteContainer.style.opacity = 1;
+                siteContainer.style.opacity = 0;
+            
+            } else {
+    
+                siteContainer.style.opacity = 1;
+    
+            }
 
         }
+
+        if (delay > 0) {
+
+            setTimeout(doHideSwitch, delay);
+
+        } else {
+
+            doHideSwitch();
+
+        }
+
+        
 
     };
 
@@ -52,11 +66,9 @@ const swapBGMenuSlide = () => {
 
                 const color = e.currentTarget.dataset.menuItemColor;
 
-                console.log(color);
-
                 if (color === 'blue') {
 
-                    e.currentTarget.style.color = EDFXBlue;
+                    e.currentTarget.style.color = EDFXBlueLight;
 
                     menuItemSlide.style.backgroundColor = EDFXRed;
 
@@ -84,7 +96,7 @@ const swapBGMenuSlide = () => {
                 
                 if (color === 'red') {
 
-                    e.currentTarget.style.color = EDFXRed;
+                    e.currentTarget.style.color = EDFXOrange;
 
                     menuItemSlide.style.backgroundColor = EDFXBlue;
 
@@ -117,30 +129,24 @@ const swapBGMenuSlide = () => {
 
         link.addEventListener('mouseleave', e => {
 
-            hideSiteContainer(false);
-
-            const eParent = e.currentTarget.parentNode;
-
-            if (eParent.classList.contains('edfx-toggle-menu__item') && e.currentTarget.tagName === 'A') {
-
-                const dataMenuItemName = e.currentTarget.dataset.menuItemName;
             
+            const eParent = e.currentTarget.parentNode;
+            
+            if (eParent.matches('.edfx-toggle-menu__item') && e.currentTarget.tagName === 'A') {
+                
+                const dataMenuItemName = e.currentTarget.dataset.menuItemName;
+                
                 const menuItemSlide = menuItemSlides.find(slide => slide.dataset.menuItemSlide ? slide.dataset.menuItemSlide === dataMenuItemName : null);
-
+                
                 if (!menuItemSlide) return;
-
+                
                 e.currentTarget.style.color = '#fff';
 
                 menuToggleBody.style.backgroundColor = 'rgba(253, 56, 25, 1)';
-                
-                // setTimeout(() => {
-
+            
                 menuItemSlide.style.opacity = 0;
-
-                // }, 500);
-
-                // clearInterval(bgSlideCheck);
-                // EE.removeListener('bg-slide-activated', bgSlideCheck);
+                
+                hideSiteContainer(false);
 
             }
 

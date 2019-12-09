@@ -12,7 +12,7 @@ import swapBGMenuSlide from '../effects/swapBGMenuSlide';
 
 // import '../../../css/src/style.scss';
 
-incrementzIndexOnHover('grid-box', 4, 'logo-image', 'site-thumbnail');
+// incrementzIndexOnHover('grid-box', 4, 'logo-image', 'site-thumbnail');
 
 SmoothScroll({
 
@@ -42,6 +42,6 @@ SmoothScroll({
 
 footerLinkAnimation();
 
-swapBGMenuSlide();
+swapBGMenuSlide(2000);
 
 renderMenu();

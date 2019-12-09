@@ -15,49 +15,49 @@ RewriteRule ^(.+)$ index.php [QSA,L]
     AddOutputFilterByType BROTLI_COMPRESS application/php text/css text/html text/plain text/xml application/javascript application/ld+json application/json image/gif image/jpeg image/png image/jpg image/svg image/gif image/webp image/x-icon
 </IfModule>
 
-<IfModule mod_headers.c>
-    FileETag None
-    Header unset ETag
-    Header unset Pragma
-    Header unset Cache-Control
-    Header unset Last-Modified
-	 # default cache 1 year = 31556926 s
-    Header set Cache-Control "max-age=31556926, public, no-transform, must-revalidate"
-<IfModule mod_alias.c>
-    <FilesMatch "\.(htm|html|json|rss|txt|xhtml|xml)$">
-        # cache markup for 1 week
-        Header set Cache-Control "max-age=604800, public, no-transform, must-revalidate"
-    </FilesMatch>
-        <FilesMatch "\.(js|css)$">
-        # cache for 1 week = 604800 seconds
-        Header set Cache-Control "max-age=604800, public, no-transform, must-revalidate"
-    </FilesMatch>
-            <FilesMatch "\.(gif|jpe|jpeg|jpg|png|ico)$">
-                # cache image files for 1 month = 2629744 seconds
-                Header set Cache-Control "max-age=2629744, public, no-transform, must-revalidate"
-    </FilesMatch>
-            <FilesMatch "\.(doc|eot|flv|mp4|ogg|pdf|svg|swf|ttf|woff)$">
-                # cache fonts and media files for 1 month = 2629744 seconds
-                Header set Cache-Control "max-age=2629744, public, no-transform, must-revalidate"
-    </FilesMatch>
-</IfModule>
+# <IfModule mod_headers.c>
+#     FileETag None
+#     Header unset ETag
+#     Header unset Pragma
+#     Header unset Cache-Control
+#     Header unset Last-Modified
+# 	 # default cache 1 year = 31556926 s
+#     Header set Cache-Control "max-age=31556926, public, no-transform, must-revalidate"
+# <IfModule mod_alias.c>
+#     <FilesMatch "\.(htm|html|json|rss|txt|xhtml|xml)$">
+#         # cache markup for 1 week
+#         Header set Cache-Control "max-age=604800, public, no-transform, must-revalidate"
+#     </FilesMatch>
+#         <FilesMatch "\.(js|css)$">
+#         # cache for 1 week = 604800 seconds
+#         Header set Cache-Control "max-age=604800, public, no-transform, must-revalidate"
+#     </FilesMatch>
+#             <FilesMatch "\.(gif|jpe|jpeg|jpg|png|ico)$">
+#                 # cache image files for 1 month = 2629744 seconds
+#                 Header set Cache-Control "max-age=2629744, public, no-transform, must-revalidate"
+#     </FilesMatch>
+#             <FilesMatch "\.(doc|eot|flv|mp4|ogg|pdf|svg|swf|ttf|woff)$">
+#                 # cache fonts and media files for 1 month = 2629744 seconds
+#                 Header set Cache-Control "max-age=2629744, public, no-transform, must-revalidate"
+#     </FilesMatch>
+# </IfModule>
 
 # disable file-caching during site maintenance (temporary)
-# <FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|png|pdf|swf|txt)$">
-#     <IfModule mod_expires.c>
-#     ExpiresActive Off
-#     </IfModule>
-#     <IfModule mod_headers.c>
-#         FileETag None
-#         Header unset ETag
-#         Header unset Pragma
-#         Header unset Cache-Control
-#         Header unset Last-Modified
-#         Header set Pragma "no-cache"
-#         Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-#         Header set Expires "Mon, 10 Apr 1972 00:00:00 GMT"
-#     </IfModule>
-# </FilesMatch>
+<FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|png|pdf|swf|txt)$">
+    <IfModule mod_expires.c>
+    ExpiresActive Off
+    </IfModule>
+    <IfModule mod_headers.c>
+        FileETag None
+        Header unset ETag
+        Header unset Pragma
+        Header unset Cache-Control
+        Header unset Last-Modified
+        Header set Pragma "no-cache"
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Expires "Mon, 10 Apr 1972 00:00:00 GMT"
+    </IfModule>
+</FilesMatch>
 
 # MIME TYPES
 <IfModule mod_mime.c>

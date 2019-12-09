@@ -1,37 +1,61 @@
 {
 
-    "home" : { 
-        "requestURI": "/",
-        "routeFileDir": "/views/home.php" 
+    "main": {
+
+        "home" : { 
+            "requestURI": "/",
+            "routeFileDir": "/views/home.php" 
+        },
+        "about": {
+            "requestURI": "/about",
+            "routeFileDir": "/views/about.php" 
+        },
+        "portfolio": {
+            "requestURI": "/portfolio",
+            "routeFileDir": "/views/portfolio.php"
+        },
+        "services": {
+            "requestURI": "/services",
+            "routeFileDir": "/views/services.php"
+        },
+        "blog": {
+            "requestURI": "/blog",
+            "routeFileDir": "/views/blog.php"
+        },
+        "contact": {
+            "requestURI": "/contact",
+            "routeFileDir": "/views/contact.php"
+        }
+
     },
-    "about": {
-        "requestURI": "/about",
-        "routeFileDir": "/views/about.php" 
-    },
-    "portfolio": {
-        "requestURI": "/portfolio",
-        "routeFileDir": "/views/portfolio.php"
-    },
-    "services": {
-        "requestURI": "/services",
-        "routeFileDir": "/views/services.php"
-    },
+
     "blog": {
-        "requestURI": "/blog",
-        "routeFileDir": "/views/blog.php"
-    },
-    "contact": {
-        "requestURI": "/contact",
-        "routeFileDir": "/views/contact.php"
-    },
-    "hello-world": {
-        "requestURI": "/blog/hello-world"
-    },
-    "hola-mundo": {
-        "requestURI": "/blog/hola-mundo"
-    },
-    "hallo-welt": {
-        "requestURI": "/blog/hallo-welt"
+
+        "hello-world": {
+            "requestURI": "/blog/hello-world"
+        },
+        "hola-mundo": {
+            "requestURI": "/blog/hola-mundo"
+        },
+        "hallo-welt": {
+            "requestURI": "/blog/hallo-welt"
+        },
+        "starting-with-something": {
+            "requestURI": "/blog/starting-with-something"
+        },
+        "creating-my-own-cms": {
+            "requestURI": "/blog/creating-my-own-cms"
+        },
+        "your-social-media-strategy": {
+            "requestURI": "/blog/your-social-media-strategy"
+        },
+        "fixing-crashed-wordpress-site": {
+            "requestURI": "/blog/fixing-crashed-wordpress-site"
+        },
+        "how-to-migrate-wordpress-site": {
+            "requestURI": "/blog/how-to-migrate-wordpress-site"
+        }
+
     }
 
         

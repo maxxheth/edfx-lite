@@ -67,7 +67,6 @@ $margin-top: 7rem;
 
             &[data-menu-item-slide="home"] {
                
-                //background-color: $edfx_blue;
                 background-image: url(/images/deep-ellum-smiley-face-1.jpg);
                            
 
@@ -75,7 +74,7 @@ $margin-top: 7rem;
 
             &[data-menu-item-slide="about"] {
                
-                //background-color: $edfx_red;
+           
                 background-image: url(/images/headway-537308-unsplash-1024x683.jpg);
                           
 
@@ -83,10 +82,34 @@ $margin-top: 7rem;
 
             &[data-menu-item-slide="portfolio"] {
                
-                //background-color: $edfx_blue;
+          
                 background-image: url(/images/igor-miske-207639-unsplash-1024x591.jpg);
                        
 
+            }
+
+            &[data-menu-item-slide="services"] {
+               
+           
+                background-image: url(/images/Dallas_Skyline_with_Arts_District_rs.jpg);
+                       
+
+            }
+
+            &[data-menu-item-slide="blog"] {
+               
+           
+                background-image: url(/images/Dallas_Skyline_with_Arts_District_rs.jpg);
+                
+                
+            }
+
+            &[data-menu-item-slide="contact"] {
+               
+           
+                background-image: url(/images/Dallas_Skyline_with_Arts_District_rs.jpg);
+                
+                
             }
 
             &--negative {

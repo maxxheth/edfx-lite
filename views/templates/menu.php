@@ -8,6 +8,8 @@ if (!function_exists('loadMenu')) {
 
 function loadMenu() {
 
+    global $root_url;
+
     $menu_items = array(
 
          array(
@@ -38,7 +40,7 @@ function loadMenu() {
 
     );
 
-    $menu_items_int = array_map('intval', $menu_items);
+    //$menu_items_int = array_map('intval', $menu_items);
 
     ?>
 
@@ -50,7 +52,7 @@ function loadMenu() {
 
                     <?php $isEven = $menu_item_index % 2 == 0; ?>
 
-                    <li class="edfx-toggle-menu__item"><a class="edfx-toggle-menu__link" href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $menu_item['link']; ?>" data-menu-item-color="<?php echo $isEven ? 'blue' : 'red'; ?>" data-menu-item-even-check="<?php echo  $menu_item_index; ?>" data-menu-item-name="<?php echo strtolower($menu_item['name']) ?>" rel="noopener noreferrer"><?php echo $menu_item['name']; ?></a></li>
+                    <li class="edfx-toggle-menu__item"><a class="edfx-toggle-menu__link" href="<?php echo $root_url . $menu_item['link']; ?>" data-menu-item-color="<?php echo $isEven ? 'blue' : 'red'; ?>" data-menu-item-even-check="<?php echo  $menu_item_index; ?>" data-menu-item-name="<?php echo strtolower($menu_item['name']) ?>" rel="noopener noreferrer"><?php echo $menu_item['name']; ?></a></li>
 
                 <?php endforeach; ?>
 

@@ -127,15 +127,15 @@ ini_set('display_errors', 1);
                     flowing.
                 </p>
 
-                <p>Each project we take on consists of five phases:</p>
+                <p>Each project we take on consists of five phases: Discovery --> Design / Prototype --> Development --> Testing --> Launch!</p>
 
-                <ul style="padding-top:unset;padding-bottom:unset">
+                <!-- <ul style="padding-top:unset;padding-bottom:unset">
                     <li>Discovery</li>
                     <li>Design / Prototype</li>
                     <li>Development</li>
                     <li>Testing</li>
                     <li>Launch The Site!</li>
-                </ul>
+                </ul> -->
                 <p>The end result is an outstanding website that you can confidently launch and use to grow your
                     business.</p>
 
@@ -148,8 +148,11 @@ ini_set('display_errors', 1);
     <!--JARALLAX SCENE 02-->
 
 
-    <div id="jarallax-scene-02" class="jarallax"
-        style="background-image: url( /images/discussing-plans-for-design-1_compressed.jpg )"></div>
+    <div id="jarallax-scene-02" class="jarallax" style="background-image: url( '/images/discussing-plans-for-design-1_compressed.jpg')"></div>
+
+       
+
+        
 
 
     <!--END 2ND SECTION-->

@@ -25,5 +25,5 @@ tippy(document.querySelectorAll('.card--red-bg'), {
 footerLinkAnimation();
 renderMenu();
 flipCards();
-swapBGMenuSlide();
+swapBGMenuSlide(2000);
 IEHacks();

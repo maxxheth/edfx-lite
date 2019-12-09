@@ -13,6 +13,10 @@ import 'simplebar';
 
 import tippy, {followCursor} from 'tippy.js';
 
+import triggerEvent from '../helper-funcs/triggerEvent';
+
+window.triggerEvent = triggerEvent;
+
 // import makeWaterRipples from '../effects/makeWaterRipples';
 
 
@@ -34,5 +38,5 @@ tippy(document.querySelectorAll('.card--red-bg'), {
 footerLinkAnimation();
 renderMenu();
 flipCards();
-swapBGMenuSlide();
+swapBGMenuSlide(1000);
 IEHacks();

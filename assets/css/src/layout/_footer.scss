@@ -254,6 +254,16 @@
 
         }
 
+        @media all and (max-width:992px) and (orientation:landscape) {
+
+            &:nth-of-type(2) {
+
+                display:none;
+
+            }
+
+        }
+
 
 
         // align-items: center;
