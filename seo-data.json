@@ -1,0 +1,70 @@
+{
+    "pages": {
+        "home": {
+            "title" : "Home Page Title",
+            "metaDescription": "This is the home page meta description."
+        },
+        "about": {
+            "title": "About Page Title",
+            "metaDescription": "This is the about meta description."
+        },
+        "services" : {
+            "title": "Services Page Title",
+            "metaDescription": "This is the services meta description."
+        },
+        "portfolio": {
+            "title" : "Portfolio Page Title",
+            "metaDescription": "This is the portfolio page meta description."
+        },
+        "blog": {
+            "title": "Blog Page Title",
+            "metaDescription": "This is the blog page meta description"
+        },
+        "contact": {
+            "title": "Contact Page Title",
+            "metaDescription": "This is the contact page meta description."
+        }
+    }, 
+    "posts": {
+        "hello-world": {
+            "title": "Hello World Page Title",
+            "metaDescription" : "This is the hello world meta description.",
+            "publishedOn": "12/08/2019"
+        },
+        "hola-mundo": {
+            "title": "Hola Mundo Page Title",
+            "metaDescription": "This is the meta description for the Hola Mundo test article.",
+            "publishedOn": "12/08/2019"
+        },
+        "hallo-welt": {
+            "title": "Hallo Welt Page Title",
+            "metaDescription": "This is the meta description for the Hallo Welt test page.",
+            "publishedOn": "12/08/2019"
+        },
+        "starting-with-something": {
+            "title": "Starting With Something",
+            "metaDescription": "This is the meta description for the Starting With Something test page.", 
+            "publishedOn": "12/08/2019"
+        },
+        "creating-my-own-cms": {
+            "title": "Creating My Own CMS",
+            "metaDescription": "This is a meta description for the Creating My Own CMS",
+            "publishedOn": "12/08/2019"
+        },
+        "your-social-media-strategy": {
+            "title": "Your Social Media Strategy",
+            "metaDescription": "This is the meta description for the Your Social Media Strategy test page.",
+            "publishedOn": "12/08/2019"
+        },
+        "fixing-crashed-wordpress-site": {
+            "title": "How To Fix Your WordPress Site When It Crashes",
+            "metaDescription":"This is the meta description for the How To Fix Your WordPress Site When It Crashes test page.",
+            "publishedOn": "12/08/2019"
+        },
+        "how-to-migrate-wordpress-site": {
+            "title": "How To Migrate Your Wordpress Site",
+            "metaDescription": "This is the meta description for the How To Migrate Your WordPress Site test page.",
+            "publishedOn": "12/08/2019"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+mobile-card {
+
+    perspective: 150rem;
+    position: relative;
+
+    &__side {
+
+        // height: 100px;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+    }
+
+    // &__side--blue  {
+
+        
+
+    // }
+
+    // &__side--red {
+
+
+
+    // }
+
+}

@@ -1,0 +1,284 @@
+// #panel-section {
+//     lost-utility: clearfix;
+//     width: 100vw;
+    
+// }
+
+@media all and (min-width:768px) {
+
+    #panel-section {
+        height: 100%;
+    }
+
+}
+
+.panel {
+
+    height: 100%;
+    // lost-align: middle-left;
+
+    &-title {
+
+        font-weight: bold;
+        color: white;
+        position: relative;
+        text-align: center;
+
+    }
+
+    &-desc {
+        color: #fff;
+        margin-top: 2rem;
+    }
+}
+
+// 1025px and above
+
+@media all and (min-width:1025px) /*and (max-width:1439px)*/ {
+
+    #person-working-on-mac {
+        min-height: 100%;
+        // min-width: 84.1vw;
+        // margin-top: 3rem;
+        // margin-left: -289px;
+        object-fit:cover;
+    }
+
+    #panel-01 {
+        background-color:#fd3819;
+        lost-column: 1/2 0;
+        padding: 13rem 5rem;
+        margin-right: unset !important;
+        position:relative;
+        z-index: 1;
+        margin-top: 5rem;        
+    }
+    
+    #panel-02 {
+        // background-color:#00a0ff;
+        lost-column: 1/2 0;
+        min-width:50%;
+    }
+
+    .panel {
+
+        &-title {
+
+            // top: 16rem;
+            font-size: 4rem;
+
+        }
+
+        &-desc {
+
+            // padding: 7rem;
+            // margin-top: 9rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+
+        }
+
+    }
+
+
+}
+@media all and (min-width:1920px) {
+
+    #person-working-on-mac {
+        min-height: 100%;
+        min-width: 100vw;
+       
+        // margin-left: -289px;
+        margin-left: -40rem;
+        object-fit: cover;
+    }
+
+    #panel-01 {
+        background-color:#fd3819;
+        lost-column: 1/2 0;
+        margin-right: unset !important;
+        position:relative;
+        z-index: 1;        
+    }
+    
+    #panel-02 {
+        // background-color:#00a0ff;
+        lost-column: 1/2 0;
+        min-width:50%;
+    }
+
+    .panel {
+
+        &-title {
+
+            // top: 19rem;
+            font-size: 5rem;
+            margin-top: 21rem;
+        }
+
+        &-desc {
+
+            padding: 0 7rem;
+            // margin-top: 9rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+
+        }
+
+    }
+
+
+}
+
+// @media all and (min-width:1025px) {
+
+//     #person-working-on-mac {
+//         min-height: 100%;
+//         min-width: 79vw;
+//         // margin-top: 3rem;
+//     }
+
+//     #panel-01 {
+//         background-color:#fd3819;
+//         lost-column: 1/2 0;
+//         margin-right: unset !important;    
+//     }
+    
+//     #panel-02 {
+//         // background-color:#00a0ff;
+//         lost-column: 1/2 0;
+//         min-width:50%;
+//     }
+
+//     .panel {
+
+//         &-title {
+
+//             top: 15rem;
+
+//         }
+
+//         &-desc {
+
+//             padding: 7rem;
+//             margin-top: 9rem;
+//             font-size: 1.8rem;
+
+//         }
+
+//     }
+
+// }
+
+@media all and (max-width:1024px) {
+
+    #person-working-on-mac {
+        min-height: 100%;
+        // min-width: 79vw;
+        // margin-top: 3rem;
+    }
+
+    #panel-01 {
+        background-color:#fd3819;
+        lost-column: 1/1 0;
+        margin-right: unset !important;
+        height: 100%;  
+    }
+    
+    #panel-02 {
+        // background-color:#00a0ff;
+        display:none;
+        // min-width:50%;
+    }
+
+    .panel {
+
+        &-title {
+
+            margin-top: 11rem;
+
+        }
+
+        &-desc {
+
+            // padding: 7rem;
+            // margin-top: 9rem;
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+
+        }
+
+    }
+
+}
+
+// @media all and (orientation:portrait)  and (max-width:900px) {
+
+//     #panel-01 {
+//         background-color:#fd3819;
+//         lost-column: 1/1 0;
+//         // margin-right: unset !important;
+//         lost-utility:clearfix;    
+//     }
+    
+//     #panel-02 {
+//         display:none;
+//     }
+
+//     .panel {
+
+//         &-title {
+
+//             top: 11rem;
+
+//         }
+
+//         &-desc {
+
+//             padding: 4rem;
+//             font-size: 1.3rem;
+
+//         }
+
+//     }
+// }
+// @media all and (orientation:landscape)  and (max-width:900px) {
+
+//     #panel-01 {
+//         background-color:#fd3819;
+//         lost-column: 1/1 0;
+//         // margin-right: unset !important;
+//         lost-utility:clearfix;    
+//     }
+    
+//     #panel-02 {
+//         display:none;
+//     }
+
+//     .panel {
+
+//         &-title {
+
+//             top: 10.5rem;
+
+//         }
+
+//         &-desc {
+
+//             padding: 4rem;
+//             font-size: 1.3rem;
+//             margin-top: 6rem;
+//             line-height: 153%;
+//             font-weight: 600;
+
+//         }
+
+//         &-para {
+
+//             margin-bottom: 9px;
+
+//         }
+
+//     }
+// }
+
