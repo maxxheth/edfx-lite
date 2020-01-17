@@ -23,7 +23,9 @@
 
 @import "/node_modules/@fortawesome/fontawesome-free/css/all.css";
 
+// @import "/node_modules/bulma/css/bulma.css";
 // ABSTRACTS
+
 
 
 @import "abstracts/variables";
@@ -41,7 +43,7 @@
 // @import "components/common-genesis";
 // @import "components/common-wordpress-elements";
 // @import "components/featured-content";
-// @import "components/forms";
+@import "components/forms";
 // @import "components/gallery";
 // @import "components/html-objects";
 // @import "components/plugins";
@@ -59,6 +61,7 @@
 @import "components/panels";
 @import "components/grid-layout";
 @import "components/edfx-bg";
+@import "components/tippy";
 
 // LAYOUTS
 

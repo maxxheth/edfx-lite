@@ -10,11 +10,22 @@
         background-blend-mode: color-burn;
         background-size: cover;
         transition: 2s all ease-in-out;
-        display:flex;
+        display: flex;
         color: white;
         justify-content: center;
         align-items: center;
-        padding: 20rem;
+
+        @media all and (min-width: 769px) {
+
+            padding: 20rem;
+
+        }
+
+        @media all and (max-width:740px) {
+
+            padding: 2rem;
+
+        }
 
     }
 

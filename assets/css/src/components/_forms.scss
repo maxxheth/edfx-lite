@@ -104,3 +104,26 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
+
+
+.edfx {
+
+	&__contact-form {
+
+		& * {
+			font-size: 93%;
+		}
+
+		& form {
+
+			width: 60%;
+
+			& button {
+				display: flex;
+			}
+
+		}
+
+	}
+
+}

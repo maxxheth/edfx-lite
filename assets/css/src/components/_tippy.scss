@@ -1,0 +1,20 @@
+.tippy {
+
+
+    &-tooltip {
+
+        color: $edfx_black !important;
+
+        background-color: $edfx_beige !important;
+
+
+    }
+
+    &-arrow {
+
+        border-top-color: $edfx_beige !important;
+        border-bottom-color: $edfx_beige !important;   
+
+    }
+
+}

@@ -1,8 +1,7 @@
-
 /** _grid-layout.scss **/
 
 .master-grid-box {
-    
+
     width: 100%;
     background-color: #3023e4;
     display: flex;
@@ -15,16 +14,28 @@
 .grid-box {
 
     // background-color:red;
-    
+
     width: 50%;
-    padding: 20rem;
+
+    @media all and (min-width:769px) {
+
+        padding: 12% 20rem;
+
+    }
+
+    @media all and (max-width: 850px) {
+
+        padding: 25% 50%;
+        border: none !important;
+
+    }
 
     &:first-of-type {
 
         background-color: $edfx_red;
 
         & * {
-            
+
             background-color: $edfx_beige;
 
         }
@@ -62,7 +73,7 @@
 
         }
     }
- 
+
 
     // Setting up flipping card approach
 
@@ -77,7 +88,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        overflow:hidden;
+        overflow: hidden;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
 
@@ -85,14 +96,14 @@
 
     & .side.logo-image {
 
-        
-        
-        z-index:1;
+
+
+        z-index: 1;
         transition: all 0.7s ease-in-out;
         transform: rotateX(0);
-        border: 1px dotted black;
-       
-        & > h3 {
+        // border: 1px dotted black;
+
+        &>h3 {
 
             font-size: 4rem;
             position: relative;
@@ -101,7 +112,7 @@
 
         }
 
-        & > img {
+        &>img {
 
             position: absolute;
             top: 50%;
@@ -151,7 +162,7 @@
 
         }
 
-        & > h3 {
+        &>h3 {
 
             font-size: 4rem;
             position: relative;
@@ -161,7 +172,7 @@
 
         }
 
-        
+
     }
 
     &:hover .side.logo-image {
