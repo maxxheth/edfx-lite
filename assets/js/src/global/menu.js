@@ -1,3 +1,9 @@
+import {hideSiteContainer} from '../helper-funcs/container-hide';
+
+const siteContainer = document.querySelector('.site-container');
+
+siteContainer.style.transition = 'all 0.1s ease-in-out';
+
 const renderMenu = () => {
 
     const docElemStyle = document.documentElement.style;
@@ -15,7 +21,7 @@ const renderMenu = () => {
     //     tlOut = new TimelineLite();
 
     [...menuContent.children].filter(child => child.tagName === 'LI')
-        
+
         .forEach(child => child.style.transition = '0.2s all ease-in-out');
 
     const menuItemSlides = [...document.querySelectorAll('.edfx-toggle-menu__item--slide')];
@@ -73,13 +79,13 @@ const renderMenu = () => {
 
             setTimeout(prepToggle, 700);
 
-        }, 700);
+        }, 400);
 
         setTimeout(() => {
 
             toggleMenuChildren(menuContent)(true)(false);
 
-        }, 1100);
+        }, 800);
 
     };
 
@@ -115,7 +121,7 @@ const renderMenu = () => {
 
                 elem.style.opacity = 0;
 
-            }, 1200);
+            }, 800);
 
             setTimeout(() => {
 
@@ -123,7 +129,7 @@ const renderMenu = () => {
 
                 elem.style.zIndex = -1;
 
-            }, 1600);
+            }, 1200);
 
         });
 
@@ -183,76 +189,53 @@ const renderMenu = () => {
 
     };
 
+    const toggleSwitch = (target, classToCheck) => {
+
+        if (!target.classList.contains(classToCheck)) {
+
+            target.classList.add('is-active');
+
+            show(menuContent);
+
+            hideSiteContainer(true, siteContainer, 1000);
+
+            prepMenuItemSlide(menuItemSlides)(true);
+
+        } else {
+
+            target.classList.remove('is-active');
+
+            hide(menuContent);
+
+            hideSiteContainer(false, siteContainer, 0);
+
+            prepMenuItemSlide(menuItemSlides)(false);
+
+        }
+
+    };
 
     const runToggleMenu = (event, eventTargetToggleType) => {
 
         switch (eventTargetToggleType) {
 
-            case 'toggleParent':
+        case 'toggleParent':
 
-                if (!event.target.classList.contains('is-active')) {
+            toggleSwitch(event.target, 'is-active');
 
-                    event.target.classList.add('is-active');
+            break;
 
-                    show(menuContent);
+        case 'toggleBox':
 
-                    prepMenuItemSlide(menuItemSlides)(true);
+            toggleSwitch(event.target.parentElement, 'is-active');
+                
+            break;
 
-                } else if (event.target.classList.contains('is-active')) {
+        case 'toggleInner':
 
-                    event.target.classList.remove('is-active');
-
-                    hide(menuContent);
-
-                    prepMenuItemSlide(menuItemSlides)(false);
-
-                }
-
-                break;
-
-            case 'toggleBox':
-
-                if (!event.target.parentElement.classList.contains('is-active')) {
-
-                    event.target.parentElement.classList.add('is-active');
-
-                    show(menuContent);
-
-                    prepMenuItemSlide(menuItemSlides)(true);
-
-                } else if (event.target.parentElement.classList.contains('is-active')) {
-
-                    event.target.parentElement.classList.remove('is-active');
-
-                    hide(menuContent);
-
-                    prepMenuItemSlide(menuItemSlides)(false);
-
-                }
-
-                break;
-
-            case 'toggleInner':
-
-                if (!event.target.parentElement.parentElement.classList.contains('is-active')) {
-
-                    event.target.parentElement.parentElement.classList.add('is-active');
-
-                    show(menuContent);
-
-                    prepMenuItemSlide(menuItemSlides)(true);
-
-                } else if (event.target.parentElement.parentElement.classList.contains('is-active')) {
-
-                    event.target.parentElement.parentElement.classList.remove('is-active');
-
-                    hide(menuContent);
-
-                    prepMenuItemSlide(menuItemSlides)(false);
-
-                }
-
-                break;
+            toggleSwitch(event.target.parentElement.parentElement, 'is-active');
+                
+            break;
 
         }
 
@@ -264,47 +247,47 @@ const renderMenu = () => {
 
         switch (event.target) {
 
-            case toggleParent:
+        case toggleParent:
 
-                runToggleMenu(event, 'toggleParent');
+            runToggleMenu(event, 'toggleParent');
 
-                document.removeEventListener('click', togglePrep, true);
+            document.removeEventListener('click', togglePrep, true);
 
-                setTimeout(() => {
+            setTimeout(() => {
 
-                    document.addEventListener('click', togglePrep, true);
+                document.addEventListener('click', togglePrep, true);
 
-                }, removeEventListenerDelay);
+            }, removeEventListenerDelay);
 
-                break;
+            break;
 
-            case toggleBox:
+        case toggleBox:
 
-                runToggleMenu(event, 'toggleBox');
+            runToggleMenu(event, 'toggleBox');
 
-                document.removeEventListener('click', togglePrep, true);
+            document.removeEventListener('click', togglePrep, true);
 
-                setTimeout(() => {
+            setTimeout(() => {
 
-                    document.addEventListener('click', togglePrep, true);
+                document.addEventListener('click', togglePrep, true);
 
-                }, removeEventListenerDelay);
+            }, removeEventListenerDelay);
 
-                break;
+            break;
 
-            case toggleInner:
+        case toggleInner:
 
-                runToggleMenu(event, 'toggleInner');
+            runToggleMenu(event, 'toggleInner');
 
-                document.removeEventListener('click', togglePrep, true);
+            document.removeEventListener('click', togglePrep, true);
 
-                setTimeout(() => {
+            setTimeout(() => {
 
-                    document.addEventListener('click', togglePrep, true);
+                document.addEventListener('click', togglePrep, true);
 
-                }, removeEventListenerDelay);
+            }, removeEventListenerDelay);
 
-                break;
+            break;
 
         }
 
