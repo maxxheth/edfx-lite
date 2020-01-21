@@ -1,4 +1,4 @@
-import isEven from '../logic/is-even'
+import isEven from '../logic/is-even';
 
 const footerLinkAnimation = () => {
 
@@ -40,8 +40,6 @@ const footerLinkAnimation = () => {
             edfxSocialMediaLinks.forEach(smLink => smLink.classList.add('edfx-blue'));
 
             origLinkFontSize = getComputedStyle(link).fontSize;
-
-            link.style.fontWeight = '500';
 
             edfxFooterFirstHalf.classList.add('edfx-black-bg');
 

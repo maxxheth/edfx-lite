@@ -1,8 +1,10 @@
 import EDFXColors from '../global/globalVars';
 
-const { EDFXRed, EDFXBlue, EDFXBlueLight, EDFXOrange } = EDFXColors;
+const {
+    EDFXRed, EDFXBlue, EDFXBlueLight, EDFXOrange 
+} = EDFXColors;
 
-const swapBGMenuSlide = (hideSiteContainerDelay = 0) => {
+const swapBGMenuSlide = () => {
 
     const menuItemSlides = [...document.querySelectorAll('.edfx-toggle-menu__item--slide')]
     
@@ -12,45 +14,16 @@ const swapBGMenuSlide = (hideSiteContainerDelay = 0) => {
 
     const menuToggleBody = document.querySelector('.edfx-toggle-menu');
 
-    const siteContainer = document.querySelector('.site-container');
+    // const siteContainer = document.querySelector('.site-container');
 
     // document.addEventListener('click', e => {
 
-    const hideSiteContainer = (doHide = true, delay = 0) => {
-
-        const doHideSwitch = () => {
-
-            if (doHide) {
-            
-                siteContainer.style.opacity = 0;
-            
-            } else {
-    
-                siteContainer.style.opacity = 1;
-    
-            }
-
-        }
-
-        if (delay > 0) {
-
-            setTimeout(doHideSwitch, delay);
-
-        } else {
-
-            doHideSwitch();
-
-        }
-
-        
-
-    };
 
     menuItemLinks.forEach(link => {
 
         link.addEventListener('mouseenter', e => {
 
-            hideSiteContainer(true);
+            // hideSiteContainer(true);
 
             const eParent = e.currentTarget.parentNode;
 
@@ -146,7 +119,7 @@ const swapBGMenuSlide = (hideSiteContainerDelay = 0) => {
             
                 menuItemSlide.style.opacity = 0;
                 
-                hideSiteContainer(false);
+                // hideSiteContainer(false);
 
             }
 

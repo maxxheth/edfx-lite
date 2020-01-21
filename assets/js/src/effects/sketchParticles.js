@@ -1,129 +1,132 @@
-import createParticle from './particles';
+// import createParticle from './particles';
 
-import Sketch from './sketch';
+// import Sketch from './sketch';
 
-const Particle = createParticle();
+// const Particle = createParticle();
 
-export const dupeSketchParticlesInstance = SketchParticlesInstance => container => {
+// export const dupeSketchParticlesInstance = SketchParticlesInstance => container => {
 
-    console.log(SketchParticlesInstance);
+//     console.log(SketchParticlesInstance);
 
-    let newSketchInstance = Sketch.create({
-        container: container,
-        retina: 'auto',
-        particles: [],
-        pool: [],
-    });
+//     let newSketchInstance = Sketch.create({
+//         container: container,
+//         retina: 'auto',
+//         particles: [],
+//         pool: [],
+//     });
 
-    newSketchInstance = Object.assign(newSketchInstance, Object.create(SketchParticlesInstance));
+//     newSketchInstance = Object.assign(newSketchInstance, Object.create(SketchParticlesInstance));
 
-    console.log({
-        newSketchInstance: newSketchInstance
-    });
+//     console.log({
+//         newSketchInstance: newSketchInstance
+//     });
 
-    return newSketchInstance;
+//     return newSketchInstance;
 
-};
+// };
 
-export const createSketchParticlesInstance = container => (...colors) => (maxParticles = 0) => {
+// export const createSketchParticlesInstance = container => (...colors) => (maxParticles = 0) => {
 
-    return Sketch.create({
-        container: container,
-        retina: 'auto',
+//     return Sketch.create({
+//         container: container,
+//         retina: 'auto',
 
-        particles: [],
-        pool: [],
+//         particles: [],
+//         pool: [],
 
-        setup() {
+//         setup() {
 
-            console.log(this);
+//             console.log(this);
 
-            // Set off some initial this.particles.
-            var i, x, y;
+//             // Set off some initial this.particles.
+//             var i, x, y;
 
-            for (i = 0; i < 20; i++) {
+//             for (i = 0; i < 20; i++) {
 
-                x = (this.width * 0.5) + random(-100, 100);
-                y = (this.height * 0.5) + random(-100, 100);
-                this.spawn(x, y);
+//                 x = (this.width * 0.5) + random(-100, 100);
+//                 y = (this.height * 0.5) + random(-100, 100);
+//                 this.spawn(x, y);
             
-            }
+//             }
         
-        },
+//         },
 
-        spawn(x, y) {
+//         spawn(x, y) {
 
-            var particle, theta, force;
+//             var particle, theta, force;
 
-            if (this.particles.length >= maxParticles)
-                this.pool.push(this.particles.shift());
+//             if (this.particles.length >= maxParticles)
+//                 this.pool.push(this.particles.shift());
 
-            particle = this.pool.length ? this.pool.pop() : Object.create(Particle);
-            particle.init(x, y, random(5, 40));
+//             particle = this.pool.length ? this.pool.pop() : Object.create(Particle);
+//             particle.init(x, y, random(5, 40));
 
-            particle.wander = random(0.5, 2.0);
-            particle.color = random(colors);
-            particle.drag = random(0.9, 0.99);
+//             particle.wander = random(0.5, 2.0);
+//             particle.color = random(colors);
+//             particle.drag = random(0.9, 0.99);
 
-            theta = random(TWO_PI);
-            force = random(2, 8);
+//             theta = random(TWO_PI);
+//             force = random(2, 8);
 
-            particle.vx = sin(theta) * force;
-            particle.vy = cos(theta) * force;
+//             particle.vx = sin(theta) * force;
+//             particle.vy = cos(theta) * force;
 
-            this.particles.push(particle);
+//             this.particles.push(particle);
         
-        },
+//         },
 
-        update() {
+//         update() {
 
-            var i, particle;
+//             var i, particle;
 
-            for (i = this.particles.length - 1; i >= 0; i--) {
+//             for (i = this.particles.length - 1; i >= 0; i--) {
 
-                particle = this.particles[i];
+//                 particle = this.particles[i];
 
-                if (particle.alive) particle.move();
-                else this.pool.push(this.particles.splice(i, 1)[0]);
+//                 if (particle.alive) particle.move();
+//                 else this.pool.push(this.particles.splice(i, 1)[0]);
             
-            }
+//             }
         
-        },
+//         },
 
-        draw() {
+//         draw() {
 
-            this.globalCompositeOperation = 'lighter';
+//             this.globalCompositeOperation = 'lighter';
 
-            for (var i = this.particles.length - 1; i >= 0; i--) {
+//             for (var i = this.particles.length - 1; i >= 0; i--) {
 
-                this.particles[i].draw(this);
+//                 this.particles[i].draw(this);
             
-            }
+//             }
         
-        },
+//         },
 
-        mousemove() {
+//         mousemove() {
 
-            var particle, theta, force, touch, max, i, j, n;
+//             var particle, theta, force, touch, max, i, j, n;
 
-            for (i = 0, n = this.touches.length; i < n; i++) {
+//             for (i = 0, n = this.touches.length; i < n; i++) {
 
-                touch = this.touches[i], max = random(1, 4);
-                for (j = 0; j < max; j++) {
+//                 touch = this.touches[i], max = random(1, 4);
+//                 for (j = 0; j < max; j++) {
 
-                    this.spawn(touch.x, touch.y);
-                
-                }
+//                     this.spawn(touch.x, touch.y);
 
-            }
+//                 }
+
+//             }
         
-        }
+//         }
         
 
-    });
+//     });
 
 
 
 
 
-};
+// };
+
+
+
