@@ -14,16 +14,19 @@ ini_set('display_errors', 1);
 
     <!--BEGIN 1ST SECTION-->
 
-    <section id="home-section-01" class="home-section home-section-01">
+    <section id="home-section-01" class="home-section home-section-01" >
 
         <div id="red-card-01" class="one-half card card--red-bg">
+
+            <img class="card__logo" src="/images/edfx-logo.png" alt="edfx logo">
 
             <h2 class="card-title" id="web-des-dev-title">First-Class Web Designers &amp; Developers</h2>
 
         </div>
 
-        <div id="blue-card-01" class="one-half card--blue-bg card" style="overflow: hidden">
-
+        <div id="blue-card-01" class="one-half card--blue-bg card">
+        
+            
             <p>EDFX (pronounced "Ed Effects") comes from the Latin word "aedifex", which means architects, builders, and
                 creators.</p>
 
@@ -46,7 +49,7 @@ ini_set('display_errors', 1);
 
             </div>
 
-            <div class="mobile-card__side mobile-card__side--blue">
+            <div class="mobile-card__side mobile-card__side--blue mobile-card__side--top">
             <p>EDFX (pronounced "Ed Effects") comes from the Latin word "aedifex", which means architects, builders, and
                 creators.</p>
 
@@ -167,7 +170,7 @@ ini_set('display_errors', 1);
 
         </div>
 
-        <div id="blue-card-03" class="one-half card--blue-bg card" style="overflow: hidden">
+        <div id="blue-card-03" class="one-half card--blue-bg card" style="overflow:hidden !important">
 
             <p>What happens after your site is built?</p>
 
@@ -381,6 +384,7 @@ ini_set('display_errors', 1);
 
     </section> -->
 
+
     <!--JARALLAX SCENE 06-->
 
 
@@ -389,7 +393,6 @@ ini_set('display_errors', 1);
 
 
     <!--END 6TH SECTION-->
-
 
 </div>
 
