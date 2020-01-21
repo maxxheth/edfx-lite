@@ -13,6 +13,8 @@ $blogURLRoutes = $routingData['blog'];
 
 ?>
 
+<?php get_header(); ?>
+
 <main class="blog-articles">
 
     <?php foreach($blogURLRoutes as $routeKey => $route) : ?>
@@ -33,7 +35,7 @@ $blogURLRoutes = $routingData['blog'];
 
                 <p><?php echo $blogDescription; ?></p>
 
-                <button><a href="<?php echo $root_url . $route['requestURI']; ?>">Read More</a></button>
+                <button class="blog-articles__section--read-more"><a href="<?php echo $root_url . $route['requestURI']; ?>">Read More</a></button>
 
             </h2>
 
@@ -43,7 +45,8 @@ $blogURLRoutes = $routingData['blog'];
 
 </main>
 
-
 <?php
 
 ?>
+
+<?php get_footer('blog'); ?>
