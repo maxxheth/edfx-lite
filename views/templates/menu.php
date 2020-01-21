@@ -12,7 +12,7 @@ function loadMenu() {
 
     $menu_items = array(
 
-         array(
+        array(
             'link' => '/',
             'name' => 'Home'
         ),
