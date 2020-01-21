@@ -40,7 +40,7 @@ class SEOToolBox {
 
         $key = preg_replace('/^\//', '', $_SERVER['REQUEST_URI']);
 
-        if (in_array($key, self::$pageSlugs) || empty($key)) {
+        if (in_array($key, self::$pageSlugs) || empty($key)) { // An empty key will default to "home"
             
             if (isset(self::$pageSEOData)) {
 
