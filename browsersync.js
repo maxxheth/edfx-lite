@@ -1,11 +1,11 @@
-/* global require, setInterval */
-
+/* global require */
+/* eslint-disable */
 const browsersync = require('browser-sync').create();
 
 const reload = browsersync.reload;
 
 const onChangePaths = [
-    
+
     {
         fileDir: '*.php',
         event: 'change'
@@ -35,8 +35,8 @@ const onChangePaths = [
         event: 'change'
     },
     {
-      fileDir: '*.json',
-      event: 'change'  
+        fileDir: '*.json',
+        event: 'change'
     },
 
 
@@ -44,7 +44,10 @@ const onChangePaths = [
 
 onChangePaths.forEach(pathObj => {
 
-    const {fileDir, event} = pathObj;
+    const {
+        fileDir,
+        event
+    } = pathObj;
 
     browsersync.watch(fileDir).on(event, reload);
 
@@ -52,10 +55,17 @@ onChangePaths.forEach(pathObj => {
 
 browsersync.init({
 
-    namespace: function (namespace) {
+    // namespace: function (namespace) {
 
-        return 'localhost:3000' + namespace;
-    
-    }
+    //     return 'localhost:3000' + namespace;
+
+    // }
+
+    proxy: {
+        target: 'http://edfx.test'
+    },
+
+    injectChanges: true
+
 
 });
