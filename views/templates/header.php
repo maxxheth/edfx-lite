@@ -5,13 +5,13 @@
 error_reporting(-1);
 ini_set('display_errors', 1);
 
-require(__DIR__ . '\menu.php');
+require __DIR__ . '/menu.php';
 
 require dirname(__DIR__, 2) . '/helper_funcs/generateSass.php';
 
 require dirname(__DIR__, 2) . '/helper_funcs/seo-data-parser.php';
 
-
+//print_r($root_url);
 
 if(!function_exists('get_header')) {
 
@@ -39,7 +39,7 @@ if(!function_exists('get_header')) {
         SEOToolBox::SEOParser(dirname(__DIR__, 2) . '/seo-data.json');
     
     ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preload" href="/assets/css/dist/bundle.css" as="style">
 
@@ -116,12 +116,14 @@ if(!function_exists('get_header')) {
 
             <!-- <script async defer src=""></script> -->
 
+            <link type="text/css" rel="stylesheet" href="<?php echo $root_url . '/node_modules/bulma/css/bulma.css'; ?>">
+
         <?php break; ?>
 
         <?php endswitch; ?>
 
 
-    <link type="text/css" rel="stylesheet" href="/assets/css/dist/bundle.css">
+    <link type="text/css" rel="stylesheet" href="/assets/css/dist/bundle.css?ver=<?php echo date('h:i:s'); ?>">
 
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap" rel="stylesheet">
