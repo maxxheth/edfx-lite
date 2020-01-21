@@ -11,35 +11,11 @@ $header = $_SERVER['REQUEST_SCHEME'] . '://';
 
 $root_url = $header . $root_uri;
 
-class URIController {
-
-    public static function Get($root_request) {
-
-        switch($root_request) {
-
-            case 'ROOT_URI': 
-
-                return  $_SERVER['SERVER_NAME'];
-
-            case 'HEADER': 
-
-                return $_SERVER['REQUEST_SCHEME'] . '://';
-
-            case 'ROOT_URL': 
-                
-                return $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'];
-
-        }
-
-    }
-
-}
+require_once __DIR__ . '/vendor/autoload.php';
 
 require_once __DIR__ . '/views/templates/header.php';
 
 require_once __DIR__ . '/views/templates/footer.php';
-
-require_once __DIR__ . '/vendor/autoload.php';
 
 require_once __DIR__ . '/helper_funcs/markdown-blog-router.php';
 
