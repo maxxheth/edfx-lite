@@ -244,26 +244,7 @@ $margin-top: 7rem;
             // transform: translateY(-50%);
             font-size: 5rem;
 
-
-            &:nth-of-type(2) {
-                margin-top: $margin-top;
-            }
-
-            &:nth-of-type(3) {
-                margin-top: $margin-top * 2;
-            }
-
-            &:nth-of-type(4) {
-                margin-top: $margin-top * 3;
-            }
-
-            &:nth-of-type(5) {
-                margin-top: $margin-top * 4;
-            }
-
-            &:nth-of-type(6) {
-                margin-top: $margin-top * 5;
-            }
+            @include setMarginTop(7rem);
 
         }
 
@@ -284,21 +265,49 @@ $margin-top: 7rem;
 
     }
 
-    @media all and (max-width: 400px) and (orientation:portrait) {
+    @media all and (max-width: 500px) and (orientation:portrait) {
 
         &__item {
 
             top: 25%;
 
-            font-size: 6rem;
+            font-size: 5rem;
 
-            @include setMarginTop(6rem);
+            @include setMarginTop(7rem);
 
         }
 
     }
 
-    @media all and (max-width: 768px) and (min-height:1000px) and (orientation:portrait) {
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+
+        &__item {
+
+            top: 18%;
+
+            font-size: 8rem;
+
+            @include setMarginTop(13rem);
+
+        }
+
+    }
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+
+        &__item {
+
+            top: 18%;
+
+            font-size: 8rem;
+
+            @include setMarginTop(10rem);
+
+        }
+
+    }
+
+    @media all and (max-width: 350px) and (max-height:570px) and (orientation:portrait) {
 
         &__item {
 
@@ -306,11 +315,12 @@ $margin-top: 7rem;
 
             font-size: 7rem;
 
-            @include setMarginTop(10rem);
+            @include setMarginTop(5rem);
 
         }
 
     }
+
 
     @media all and (min-width:300px) and (max-width: 600px) and (orientation: landscape) {
 
@@ -326,7 +336,7 @@ $margin-top: 7rem;
 
     }
 
-    @media all and (max-width: 768px) and (orientation:landscape) {
+    @media all and (max-width: 900px) and (max-height: 500px) and (orientation:landscape) {
 
         &__item {
 
@@ -340,7 +350,6 @@ $margin-top: 7rem;
         }
 
     }
-
 
 }
 

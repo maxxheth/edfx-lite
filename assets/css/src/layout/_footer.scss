@@ -29,7 +29,7 @@
 
         @media all and (min-width:993px) {
 
-            position:absolute;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -153,29 +153,29 @@
 
     }
 
+    &__social-media-links {
+
+        display: flex;
+
+        justify-content: space-evenly;
+
+        height: 100%;
+
+        align-items: center;
+
+    }
+
     &__social-media-link {
 
-        
-        
         @media all and (min-width:993px) {
 
-            position: absolute;
+            font-size: 17rem;
 
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-
-            
-            font-size: 14rem;
-            @include spaceElems(12%, 20);
-            
         }
-        
+
         @media all and (max-width:992px) and (orientation:portrait) {
-            
+
             font-size: 7rem;
-            // position: relative;
-            
 
         }
 
@@ -184,7 +184,6 @@
             font-size: 9rem;
 
         }
-
 
         color: $edfx_red;
 
@@ -241,7 +240,7 @@
 
             &:nth-of-type(2) {
 
-                display:none;
+                display: none;
 
             }
 
@@ -251,7 +250,7 @@
 
             &:nth-of-type(2) {
 
-                display:none;
+                display: none;
 
             }
 
@@ -271,7 +270,7 @@
 
                 & i {
 
-                    display:none;
+                    display: none;
 
                 }
 
