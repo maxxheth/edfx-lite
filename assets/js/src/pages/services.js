@@ -1,7 +1,5 @@
 import renderMenu from '../global/menu';
-import {
-    flipCards
-} from '../logic/flip-cards';
+import {flipCards} from '../logic/flip-cards';
 
 import footerLinkAnimation from '../effects/footer-link-animation';
 
