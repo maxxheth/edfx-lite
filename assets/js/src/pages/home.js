@@ -1,7 +1,7 @@
 import renderMenu from '../global/menu';
-import {
-    flipCards
-} from '../logic/flip-cards';
+import {flipCards} from '../logic/flip-cards';
+
+import {launchTippyConfig} from '../helper-funcs/tippy-config';
 
 import footerLinkAnimation from '../effects/footer-link-animation';
 
@@ -11,29 +11,21 @@ import IEHacks from '../logic/ie-hacks';
 
 import 'simplebar';
 
-import tippy, {followCursor} from 'tippy.js';
-
 import triggerEvent from '../helper-funcs/triggerEvent';
+
+// import {setSocialMediaLogosDistance} from '../global/socialMediaLinksDistance';
 
 window.triggerEvent = triggerEvent;
 
 // import makeWaterRipples from '../effects/makeWaterRipples';
 
-
+launchTippyConfig('black', 'white');
 
 
 // animationLoader(document.getElementsById('edfx-svg-logo-cont'));
     
 // makeWaterRipples('.home-section');
 
-tippy(document.querySelectorAll('.card--red-bg'), {
-
-    content: 'Click to flip me over!',
-    followCursor: true,
-    plugins: [followCursor],
-    placement: 'top'
-
-});
 
 footerLinkAnimation();
 renderMenu();

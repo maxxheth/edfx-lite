@@ -4,9 +4,7 @@ import grabBgColors from '../global/grabBgColors';
 
 import getSiblings from '../helper-funcs/getSiblings';
 
-import {
-    jarallax
-} from 'jarallax';
+import {jarallax} from 'jarallax';
 
 export const flipCards = () => {
 
@@ -48,23 +46,23 @@ export const flipCards = () => {
 
     // cards.forEach(card => {
 
-    const transformRotate90 = 'rotateX(90deg)';
+    // const transformRotate90 = 'rotateX(90deg)';
 
     const transformRotate0 = 'rotateX(0deg)';
 
     const transformRotateNeg90 = 'rotateX(-90deg)';
 
-    const zIndexToggle = target1 => target2 => delay => {
+    // const zIndexToggle = target1 => target2 => delay => {
 
-        setTimeout(() => {
+    //     setTimeout(() => {
 
-            target1.style.zIndex = -1;
+    //         target1.style.zIndex = -1;
 
-            target2.style.zIndex = 0;
+    //         target2.style.zIndex = 0;
 
-        }, delay);
+    //     }, delay);
 
-    }
+    // };
 
     document.addEventListener(multipleEvents, e => {
 
@@ -243,9 +241,7 @@ export const flipCards = () => {
 
     const jarallaxScenes = [...document.querySelectorAll('.jarallax')];
 
-    jarallax(jarallaxScenes, {
-        speed: 1.5
-    });
+    jarallax(jarallaxScenes, {speed: 1.5});
 
     if (navigator.userAgent.indexOf('MSIE') !== -1 ||
         navigator.appVersion.indexOf('Trident/') > -1 ||
@@ -271,7 +267,7 @@ export const flipCards = () => {
 
         scene.style.width = '100vw';
 
-        scene.style.height = '100vh';
+        scene.style.height = '60vh';
 
     });
 
@@ -362,85 +358,85 @@ export const flipCards = () => {
 
     // document.addEventListener("scroll", scrollYCheck);
 
-    const mobileCardSides = [].slice.call(document.querySelectorAll('.mobile-card__side'));
+    // const mobileCardSides = [].slice.call(document.querySelectorAll('.mobile-card__side'));
 
 
 
-    const borderColors = {
+    // const borderColors = {
 
-        purpleBorder: '75, 33, 173',
-        redBorder: '253, 56, 25',
-        blueBorder: '0, 160, 255'
+    //     purpleBorder: '75, 33, 173',
+    //     redBorder: '253, 56, 25',
+    //     blueBorder: '0, 160, 255'
 
-    };
+    // };
 
     const mouseDownOrTap = 'click' || 'touch';
 
     document.addEventListener(mouseDownOrTap, e => {
 
-        let eTargetCousins = mobileCardSides.filter(card => card !== e.target);
+        // let eTargetCousins = mobileCardSides.filter(card => card !== e.target);
 
-        const resetCousins = (cousins, fullRed, fullBlue, eTarget) => {
+        // const resetCousins = (cousins, fullRed, fullBlue, eTarget) => {
 
-            const hasClass = (elem, className) => {
+        //     const hasClass = (elem, className) => {
             
-                console.log(elem);
+        //         console.log(elem);
                 
-                return elem.classList ? elem.classList.contains(className) : false;
+        //         return elem.classList ? elem.classList.contains(className) : false;
             
-            };
+        //     };
 
-            const tapPropSwap = elem => {
+        //     const tapPropSwap = elem => {
 
-                if (hasClass(elem, 'mobile-card__side--red') && hasClass(elem, 'flip-red')) {
+        //         if (hasClass(elem, 'mobile-card__side--red') && hasClass(elem, 'flip-red')) {
 
-                    if (elem === eTarget) return;
+        //             if (elem === eTarget) return;
 
-                    elem.style.backgroundColor = 'rgba(' + fullRed.join(',') + ')';
+        //             elem.style.backgroundColor = 'rgba(' + fullRed.join(',') + ')';
 
-                    const elemSiblings = getSiblings(elem);
+        //             const elemSiblings = getSiblings(elem);
 
-                    const blueSibling = elemSiblings.find(sibling => hasClass(sibling, 'mobile-card__side--blue'));
+        //             const blueSibling = elemSiblings.find(sibling => hasClass(sibling, 'mobile-card__side--blue'));
 
-                    // elem.classList.remove('flip-red');
+        //             // elem.classList.remove('flip-red');
 
-                    blueSibling.style.backgroundColor = 'rgba(' + fullBlue.join(',') + ')';
+        //             blueSibling.style.backgroundColor = 'rgba(' + fullBlue.join(',') + ')';
 
-                    // if (blueSibling.classList.contains('flip-blue')) blueSibling.classList.remove('flip-blue');
+        //             // if (blueSibling.classList.contains('flip-blue')) blueSibling.classList.remove('flip-blue');
 
-                    if (!elem.querySelector('.tap-me-prompt')) return;
+        //             if (!elem.querySelector('.tap-me-prompt')) return;
 
-                    elem.querySelector('.tap-me-prompt').style.opacity = 1;
+        //             elem.querySelector('.tap-me-prompt').style.opacity = 1;
 
-                } else if (hasClass(elem, 'mobile-card__side--blue') && hasClass(elem, 'flip-blue')) {
+        //         } else if (hasClass(elem, 'mobile-card__side--blue') && hasClass(elem, 'flip-blue')) {
 
-                    if (elem === eTarget) return;
+        //             if (elem === eTarget) return;
 
-                    elem.style.backgroundColor = 'rgba(' + fullBlue.join(',') + ')';
+        //             elem.style.backgroundColor = 'rgba(' + fullBlue.join(',') + ')';
 
-                    const elemSiblings = getSiblings(elem);
+        //             const elemSiblings = getSiblings(elem);
 
-                    const redSibling = elemSiblings.find(sibling => hasClass(sibling, 'mobile-card__side--red'));
+        //             const redSibling = elemSiblings.find(sibling => hasClass(sibling, 'mobile-card__side--red'));
 
-                    // elem.classList.remove('flip-blue');
+        //             // elem.classList.remove('flip-blue');
 
-                    redSibling.style.backgroundColor = 'rgba(' + fullRed.join(',') + ')';
+        //             redSibling.style.backgroundColor = 'rgba(' + fullRed.join(',') + ')';
 
-                    // if (redSibling.classList.contains('flip-red')) redSibling.classList.remove('flip-red');
+        //             // if (redSibling.classList.contains('flip-red')) redSibling.classList.remove('flip-red');
 
-                    if (!elem.querySelector('.tap-me-prompt')) return;
+        //             if (!elem.querySelector('.tap-me-prompt')) return;
 
-                    elem.querySelector('.tap-me-prompt').style.opacity = 0;
+        //             elem.querySelector('.tap-me-prompt').style.opacity = 0;
 
-                }
+        //         }
 
-                elem.style.removeProperty('border');
+        //         elem.style.removeProperty('border');
 
-            };
+        //     };
 
-            return cousins.forEach(cousin => tapPropSwap(cousin));
+        //     return cousins.forEach(cousin => tapPropSwap(cousin));
 
-        };
+        // };
 
         const createRGBPropObj = (firstVal, secondVal) => {
 

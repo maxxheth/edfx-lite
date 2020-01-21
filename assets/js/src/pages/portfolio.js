@@ -2,7 +2,7 @@
 // import { TimelineMax } from '../node_modules/gsap/TweenMax.js';
 import renderMenu from '../global/menu.js';
 // import flippingCards from './flipping-cards-portfolio.js';
-import incrementzIndexOnHover from '../helper-funcs/incrementzIndex';
+// import incrementzIndexOnHover from '../helper-funcs/incrementzIndex';
 
 import SmoothScroll from 'smoothscroll-for-websites';
 
