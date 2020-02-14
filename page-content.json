@@ -1,0 +1,49 @@
+{
+    "services": [
+
+        {
+            "title": "Custom Web Design & Development",
+            "imgDir": "/images/services/design-desktop.jpg",
+            "imgAlt": "custom web design and development",
+            "link": "/services/custom-web-design-development"
+        },
+
+        {
+            "title": "WordPress Design & Development",
+            "imgDir": "/images/services/wordpress-development-design.jpg",
+            "imgAlt": "wordpress services, wordpress plugin & theme development",
+            "link": "/services/wordpress"
+        },
+
+        {
+            "title": "Ecommerce Design & Development",
+            "imgDir": "/images/services/shopify-development-design.jpg",
+            "imgAlt": "ecommerce design and development services",
+            "link": "/services/ecommerce-design-development"
+        },
+
+        {
+            "title": "Technical SEO Services",
+            "imgDir": "/images/services/seo-letters.jpg",
+            "imgAlt": "technical seo services",
+            "link": "/services/technical-seo"
+        },
+
+        {
+            "title": "Web Hosting Services",
+            "imgDir": "/images/services/web-hosting.jpg",
+            "imgAlt": "wordpress hosting services, wordpress migration services",
+            "link": "/services/web-hosting"
+        },
+
+
+        {
+            "title": "Logo, Graphic, & Motion Design",
+            "imgDir": "/images/services/logo-graphic-motion-design.jpg",
+            "imgAlt": "logo graphic motion design",
+            "link": "/services/logo-graphic-motion-design"
+        }
+
+    ]
+
+}

@@ -1,0 +1,11 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+    "indentation": 4,
+    "rule-empty-line-before": "always",
+    "max-nesting-depth": 100,
+    "selector-no-redundant-nesting-selector": "never",
+    "nesting-selector": "never"
+    }
+  
+}

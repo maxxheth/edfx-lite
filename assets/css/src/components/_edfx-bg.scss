@@ -1,0 +1,32 @@
+.edfx {
+
+    &__bg {
+
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: $edfx_dark_maroon;
+        background-image: url(/images/discussing-plans-for-design.jpg);
+        background-blend-mode: color-burn;
+        background-size: cover;
+        transition: 2s all ease-in-out;
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+
+        @media all and (min-width: 769px) {
+
+            padding: 20rem;
+
+        }
+
+        @media all and (max-width:740px) {
+
+            padding: 2rem;
+
+        }
+
+    }
+
+}

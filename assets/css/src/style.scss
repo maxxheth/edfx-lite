@@ -1,0 +1,86 @@
+/*
+	Theme Name: Genesis Sample
+	Theme URI: https://demo.studiopress.com/
+	Description: This is the sample theme created for the Genesis Framework.
+	Author: StudioPress
+	Author URI: https://www.studiopress.com/
+
+	Version: 2.6.0
+
+	Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+	Template: genesis
+
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+	Text Domain: genesis-sample
+*/
+
+// Font Awesome
+
+@import "/node_modules/tippy.js/dist/tippy.css";
+
+@import "/node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+@import "/node_modules/vanilla-ripplejs/ripple.css";
+
+@import "/node_modules/swiper/css/swiper.css";
+
+// @import "/node_modules/bulma/css/bulma.css";
+// ABSTRACTS
+
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+@import "../../../node_modules/hover.css/scss/hover.scss";
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// BASE
+
+@import "base/base";
+@import "base/colors";
+@import "base/media-queries";
+@import "base/typography";
+
+// COMPONENTS
+
+// @import "components/avatar";
+// @import "components/common-genesis";
+// @import "components/common-wordpress-elements";
+// @import "components/featured-content";
+@import "components/forms";
+// @import "components/gallery";
+// @import "components/html-objects";
+// @import "components/plugins";
+// @import "components/screen-reader";
+// @import "components/search-form";
+// @import "components/tables";
+
+@import "components/effects";
+@import "components/logo";
+@import "components/titles";
+@import "components/typography";
+@import "components/widgets";
+@import "components/buttons";
+@import "components/menu";
+@import "components/flipping-cards";
+@import "components/panels";
+@import "components/grid-layout";
+@import "components/edfx-bg";
+@import "components/tippy";
+@import "components/svg";
+@import "components/info-card";
+@import "components/typewriter";
+@import "components/grid-blocks";
+@import "components/third-party";
+
+// LAYOUTS
+
+@import "layout/columns";
+@import "layout/content";
+@import "layout/sidebars";
+@import "layout/site-containers";
+@import "layout/jarallax";
+@import "layout/footer";

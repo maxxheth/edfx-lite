@@ -1,0 +1,102 @@
+{
+    "pages": {
+        "home": {
+            "title" : "Home Page Title",
+            "metaDescription": "This is the home page meta description."
+        },
+        "about": {
+            "title": "About Page Title",
+            "metaDescription": "This is the about meta description."
+        },
+        "services" : {
+            "title": "EDFX Web Services",
+            "metaDescription": "EDFX provides a wide range of specialized services to help businesses like yours focus less on tech on more on your business!"
+        },
+        "portfolio": {
+            "title" : "Portfolio Page Title",
+            "metaDescription": "This is the portfolio page meta description."
+        },
+        "blog": {
+            "title": "Blog Page Title",
+            "metaDescription": "This is the blog page meta description"
+        },
+        "contact": {
+            "title": "Contact Page Title",
+            "metaDescription": "This is the contact page meta description."
+        },
+        "web-hosting": {
+
+            "title": "Web Hosting Services | EDFX",
+            "metaDescription": "EDFX provides excellent, reliable hosting with guaranteed 99% uptime and 24/7 support."
+
+        },
+        "wordpress-design-development": {
+
+            "title": "WordPress Design & Development",
+            "metaDescription": "We offer full-service WordPress design & development services for businesses that want to make their websites a cut above their competitors."
+
+        },
+        "ecommerce-design-development": {
+            "title": "Ecommerce Design & Development",
+            "metaDescription": "EDFX specializes in ecommerce web design & development. We build sites that scale as you grow."
+        },
+        "technical-seo": {
+            "title": "Technical SEO",
+            "metaDescription": "If you're suffering from difficult technical issues that are hurting your website's SEO, we can help!"
+        },
+        "logo-graphic-motion-design": {
+            "title": "Logo, Graphic, Motion, & Design",
+            "metaDescription": "If you're suffering from difficult technical issues that are hurting your website's SEO, we can help!"
+        }
+    }, 
+    "posts": {
+        "hello-world": {
+            "title": "Hello World Page Title",
+            "metaDescription" : "This is the hello world meta description.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "hola-mundo": {
+            "title": "Hola Mundo Page Title",
+            "metaDescription": "This is the meta description for the Hola Mundo test article.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "hallo-welt": {
+            "title": "Hallo Welt Page Title",
+            "metaDescription": "This is the meta description for the Hallo Welt test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "starting-with-something": {
+            "title": "Starting With Something",
+            "metaDescription": "This is the meta description for the Starting With Something test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "creating-my-own-cms": {
+            "title": "Creating My Own CMS",
+            "metaDescription": "This is a meta description for the Creating My Own CMS",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "your-social-media-strategy": {
+            "title": "Your Social Media Strategy",
+            "metaDescription": "This is the meta description for the Your Social Media Strategy test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "fixing-crashed-wordpress-site": {
+            "title": "How To Fix Your WordPress Site When It Crashes",
+            "metaDescription":"This is the meta description for the How To Fix Your WordPress Site When It Crashes test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        },
+        "how-to-migrate-wordpress-site": {
+            "title": "How To Migrate Your Wordpress Site",
+            "metaDescription": "This is the meta description for the How To Migrate Your WordPress Site test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
+        }
+    }
+}

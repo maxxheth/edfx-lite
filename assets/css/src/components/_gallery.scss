@@ -1,0 +1,104 @@
+/* ## Gallery
+--------------------------------------------- */
+
+.gallery {
+	overflow: hidden;
+}
+
+.gallery-item {
+	float: left;
+	margin: 0 0 28px;
+	text-align: center;
+}
+
+.gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1) {
+	clear: left;
+}
+
+.gallery img {
+	border: 1px solid #eee;
+	height: auto;
+	padding: 4px;
+}
+
+.gallery img:focus,
+.gallery img:hover {
+	border: 1px solid #999;
+}
+
+// Jarallax Images
+
+/*
+#jarallax-scene-01 {
+
+	background-image: url('http://localhost:8888/wp-content/uploads/2018/08/rawpixel-678089-unsplash.jpg');
+
+}
+
+#jarallax-scene-02 {
+
+	background-image: url('http://localhost:8888/wp-content/uploads/2018/08/markus-spiske-207946-unsplash.jpg');
+
+}
+
+#jarallax-scene-03 {
+
+	background-image: url('http://localhost:8888/wp-content/uploads/2018/08/william-iven-19843-unsplash.jpg');
+
+}
+
+#jarallax-scene-04 {
+
+	background-image: url('http://localhost:8888/wp-content/uploads/2018/08/headway-537308-unsplash.jpg');
+
+}
+
+#jarallax-scene-05 {
+
+	background-image: url('http://localhost:8888/wp-content/uploads/2018/08/igor-miske-207639-unsplash.jpg');
+
+}
+*/

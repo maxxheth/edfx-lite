@@ -1,0 +1,207 @@
+/** _grid-layout.scss **/
+
+.master-grid-box {
+
+    width: 100%;
+    background-color: #3023e4;
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+    z-index: 100;
+
+}
+
+.grid-box {
+
+    // background-color:red;
+
+    width: 50%;
+
+    @media all and (min-width:769px) {
+
+        padding: 12% 20rem;
+
+    }
+
+    @media all and (max-width: 850px) {
+
+        padding: 25% 50%;
+        border: none !important;
+
+    }
+
+    &:first-of-type {
+
+        background-color: $edfx_red;
+
+        & * {
+
+            background-color: $edfx_beige;
+
+        }
+    }
+
+    &:nth-of-type(2) {
+
+        background-color: $edfx_blue;
+
+        * {
+
+            background-color: $edfx_beige;
+
+        }
+    }
+
+    &:nth-of-type(3) {
+
+        background-color: $edfx_blue;
+
+        * {
+
+            background-color: $edfx_beige;
+
+        }
+    }
+
+    &:nth-of-type(4) {
+
+        background-color: $edfx_red;
+
+        * {
+
+            background-color: $edfx_beige;
+
+        }
+    }
+
+
+    // Setting up flipping card approach
+
+    perspective: 150rem;
+    position: relative;
+
+    & .side {
+
+        height: 100%;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+    }
+
+    & .side.logo-image {
+
+
+
+        z-index: 1;
+        transition: all 0.7s ease-in-out;
+        transform: rotateX(0);
+        // border: 1px dotted black;
+
+        &>h3 {
+
+            font-size: 4rem;
+            position: relative;
+            top: 50%;
+            text-align: center;
+
+        }
+
+        &>img {
+
+            position: absolute;
+            top: 50%;
+            width: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+
+    }
+
+
+
+    & .side.site-thumbnail {
+
+        // background-color: #00a0ff; 
+        // transform: rotateX(180deg);
+        transition: all 0.7s ease-in-out;
+        background-repeat: no-repeat;
+        background-position: 80% 50%;
+
+        // opacity: 1;
+
+        &__print-dallas {
+            background-size: 102% 100%;
+
+        }
+
+        &__westllp {
+
+            background-size: 113% 100%;
+
+        }
+
+        &__blue-prynt {
+
+            background-size: 111% 100%;
+            background-position: center;
+
+        }
+
+        &__rcpstartups {
+
+            background-size: 100% 100%;
+            background-position: center;
+
+        }
+
+        &>h3 {
+
+            font-size: 4rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+
+        }
+
+
+    }
+
+    &:hover .side.logo-image {
+
+        // transform: rotateX(-180deg);
+
+        opacity: 0;
+
+
+
+    }
+
+    // &:hover .side.site-thumbnail  {
+
+    //     // transform: rotateX(-180deg);
+
+    //     opacity: 1;
+    //     z-index: 1;
+
+
+
+    // }
+
+    // &:hover .side.site-thumbnail {
+
+    //     // transform: rotateX(0);
+
+    //     opacity: 1;
+
+    // }
+
+}

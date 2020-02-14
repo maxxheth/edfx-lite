@@ -1,0 +1,123 @@
+.jarallax-alt {
+	
+	border-top: 2px solid #00a0ff !important;
+		
+	border-bottom: 2px solid #00a0ff !important;
+	
+	& > div > div {
+		
+		background-color: rgba(253, 56, 25, 0.6) !important;
+	
+	}
+	
+}
+
+.jarallax {
+    position: relative;
+    z-index: 0;
+    background-size: cover;
+	
+	border-top: 2px solid #fd3819;
+		
+	border-bottom: 2px solid #fd3819;
+	
+	transition: all 1s ease-in-out;
+	
+	transition-property: border-top, border-bottom;
+	
+	/* &:nth-of-type(even), &:nth-of-type(odd) {
+		
+		border-top: 2px solid #fd3819;
+		
+		border-bottom: 2px solid #fd3819;
+		
+	} */
+
+	@media all and (min-width:1500) {
+
+    	height: 60vh !important;
+
+	}
+
+	@media all and (min-width: 1024px) and (max-height: 1400px) and (orientation: portrait) {
+
+		height: 30vh !important;
+
+	}
+
+	@media all and (max-width: 768px) and (min-height: 1000px) and (orientation: portrait) {
+
+		height: 50vh !important;
+
+	}
+
+	@media all and (min-width: 1024px) and (max-height: 768) and (orientation: landscape) {
+
+		height: 50vh !important;
+
+	}
+
+	@media all and (max-width:500px) {
+
+		height: 50vh !important;
+
+	}
+	
+	& * {
+		
+		transition: background-color 1s ease-in-out;
+		
+	}
+	
+	& > div > div {
+		
+		background-color: rgba(0, 160, 255, 0.6);
+		background-blend-mode: luminosity;
+		
+	
+	}
+	
+	/* &:nth-of-type(odd) {
+		
+		border-bottom: 2px solid #00a0ff;
+		
+		border-top: 2px solid #fd3819;
+		
+	} */
+	
+	// &:nth-of-type(4) {
+	// 	display:none;
+	// }
+	
+	// &:nth-of-type(5) {
+	// 	display:none;
+	// }
+	
+	// &:nth-of-type(6) {
+		
+	// 	display:none;
+		
+	// }
+	
+
+    &-container {
+
+        width: 100vw; 
+        height: 100vh;
+        position: relative;
+
+    }
+
+    & > .jarallax-img {
+        position: absolute;
+        object-fit: cover;
+        /* support for plugin https://github.com/bfred-it/object-fit-images */
+        font-family: 'object-fit: cover;';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: 0.2s all ease-in-out;
+    }
+}

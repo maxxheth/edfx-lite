@@ -1,0 +1,51 @@
+{
+  "name": "edfx-dev-package",
+  "version": "1.0.1",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "bundleFiles": "webpack --config webpack.config.js -p",
+    "watchFiles": "webpack -p --watch",
+    "nodeSass": "node-sass assets/css/src/style.scss assets/css/src/postcss.css",
+    "postCSS": "node postcss-bundler.js",
+    "bundleCSS": "npm run nodeSass && npm run postCSS",
+    "bundle": "npm run bundleJS && npm run bundleCSS",
+    "watchBrowser": "node browsersync.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.6.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.0",
+    "eslint": "^6.5.1",
+    "extract-loader": "^3.1.0",
+    "fibers": "^4.0.1",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.9.3",
+    "postcss": "^7.0.18",
+    "postcss-cli": "^6.1.3",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "core-js": "^3.2.1",
+    "tabulator-tables": "^4.4.3",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

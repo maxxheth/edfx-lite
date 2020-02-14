@@ -1,0 +1,45 @@
+{
+    "testimonials": [
+
+        {
+
+            "company": "- Web Wizards",
+            "logo": "/testimonial-logos/web-wizards-logo.png",
+            "content": "A great SEO, dedicated to his work and his clients. Maximillian communicates a lot and really helped us on this quick white hat link building mission. I would have no problem in recommending him to anyone serious about their rankings ! Thanks again"
+
+        },
+
+        {
+
+            "company": "- Preston Consulting",
+            "logo": "/testimonial-logos/preston-consulting-group-logo.png",
+            "content": "Maxx did a great job with what I needed. I was really impressed with the quality of what he did, how flexible he was in taking that and making it exactly to the specs that I needed, and how fast he did it. I will be hiring him again in the near future for any web dev needs."
+
+        },
+
+        {
+            "company": "- Get Rich Slowly",
+            "logo": "",
+            "content": "Highly recommend Maximillian!  Great communication, quick execution, and solid results."
+        },
+
+        {
+            "company": "- Wolf Auto Parts",
+            "logo": "/testimonial-logos/wolf-auto-parts-logo.png",
+            "content": "Very knowledgeable. Really helped me get an understanding of how to rank my website."
+        },
+
+        {
+            "company": "- ArcMinute Marketing",
+            "logo": "/testimonial-logos/arcminute-marketing-logo.png",
+            "content": "Max was gr eat in making what was impossible, possible. He was patient with us when we needed time for communication/decisions and quick to act when called upon. Great Work!"
+        },
+
+        {
+            "company": "- The Hills Physio",
+            "logo": "/testimonial-logos/thehillsphysio-logo.png",
+            "content": "The fact that we're having to hire staff to handle all the extra business is a testament to all the awesome work Maxx did for us. Honestly, we get alot of traffic/new patients from google alone! We are super impressed!"
+        }
+
+    ]
+}

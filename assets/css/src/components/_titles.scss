@@ -1,0 +1,25 @@
+.edfx {
+
+	&__desc {
+
+		&--title {
+
+			text-align: center;
+			font-size: 6rem;
+			
+
+		}
+
+		&--text {
+
+			&:first-of-type {
+
+				margin-top: 3rem;
+
+			}
+			
+		}
+
+	}
+
+}

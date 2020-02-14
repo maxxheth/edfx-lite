@@ -1,0 +1,392 @@
+$margin-top: 7rem;
+
+@mixin setMarginTop($margin-top) {
+
+
+    &:nth-of-type(2) {
+        margin-top: $margin-top;
+    }
+
+    &:nth-of-type(3) {
+        margin-top: $margin-top * 2;
+    }
+
+    &:nth-of-type(4) {
+        margin-top: $margin-top * 3;
+    }
+
+    &:nth-of-type(5) {
+        margin-top: $margin-top * 4;
+    }
+
+    &:nth-of-type(6) {
+        margin-top: $margin-top * 5;
+    }
+
+}
+
+// .hamburger {
+//     @media all and (max-width:992px) {
+
+//         opacity: 0.2 !important;
+
+//     }
+// }
+
+.edfx-toggle-menu {
+
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    width: 0;
+    height: 0;
+    // background: linear-gradient(to bottom, rgb(188, 229, 254) 90%, rgb(255, 255, 255));
+    background: $edfx_red;
+    transition: all 0.2s ease-in-out;
+    // border-bottom: 4px solid #FF855E;
+
+    &__item {
+
+        position: absolute;
+        transform: translate(-50%, -50%);
+        // font-size: 40px;
+        // top: 25%;
+        left: 50%;
+        opacity: 0;
+
+        &>a {
+            text-decoration: none;
+            // font-size: 5rem;
+            position: relative;
+            // text-shadow: 1px 1px 1px #b02019;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        &--slide {
+
+            position: fixed;
+            background-size: cover;
+            opacity: 0;
+            z-index: 399;
+            width: 0%;
+            height: 0%;
+            transition: all 0.2s ease-in-out;
+
+            animation: 30s linear 0s infinite alternate kenBurns;
+
+            &:nth-child(even) {
+
+                // background-color: $edfx_blue;
+                background-blend-mode: multiply;
+
+            }
+
+            &:nth-child(odd) {
+
+                // background-color: $edfx_red;
+                background-blend-mode: multiply;
+
+            }
+
+            &[data-menu-item-slide="home"] {
+
+                background-image: url('/images/deep-ellum-smiley-face-1.jpg');
+
+
+            }
+
+            &[data-menu-item-slide="about"] {
+
+
+                background-image: url('/images/headway-537308-unsplash-1024x683.jpg');
+
+
+            }
+
+            &[data-menu-item-slide="portfolio"] {
+
+
+                background-image: url('/images/menu-bg-imgs/coffee-and-cake-near-book-rs.jpg');
+
+
+            }
+
+            &[data-menu-item-slide="services"] {
+
+
+                background-image: url('/images/Dallas_Skyline_with_Arts_District_rs.jpg');
+
+
+            }
+
+            &[data-menu-item-slide="blog"] {
+
+
+                background-image: url('/images/menu-bg-imgs/skyscrapers.jpg');
+
+
+            }
+
+            &[data-menu-item-slide="contact"] {
+
+
+                background-image: url('/images/menu-bg-imgs/gray-concrete-buildings-rs.jpg');
+
+
+            }
+
+            &--negative {
+
+                background-color: #000;
+                z-index: 398;
+
+            }
+
+        }
+
+    }
+
+
+    &.is-visible {
+
+        width: 100%;
+        border-bottom: 4px solid $edfx_blue;
+
+    }
+
+    &.toggle-height {
+
+        height: 100%;
+
+    }
+
+}
+
+.edfx-toggle-button {
+    position: fixed;
+    z-index: 500;
+    right: 0;
+    margin-top: 1.5rem !important;
+    margin-right: 2rem !important;
+    border-radius: 100%;
+    background-color: #ff3e02 !important;
+    border: 2px solid #00a0ff !important;
+
+    & .hamburger-box {
+
+        height: 28px !important;
+
+    }
+
+    & .hamburger-inner {
+
+        margin-top: 8%;
+
+        background-color: #fff !important;
+        cursor: pointer !important;
+        font-size: 16px !important;
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+
+        &:before,
+        &:after {
+
+            background-color: #fff !important;
+
+        }
+
+    }
+
+    &:focus {
+
+        outline: none;
+
+    }
+}
+
+@media all and (max-width:768px) {
+
+    .edfx-toggle-button {
+
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+
+    }
+
+}
+
+// @media all and (max-width:768px) and (orientation:landscape) {
+
+//     .edfx-toggle-menu {
+
+//         &__item {
+
+//             top: 20%;
+
+//         }
+
+//     }
+
+// }
+
+
+
+.edfx-toggle-menu {
+
+    @media all and (min-width: 769px) {
+
+        &__item {
+
+            top: 29%;
+
+            // transform: translateY(-50%);
+            font-size: 5rem;
+
+            @include setMarginTop(7rem);
+
+        }
+
+    }
+
+    @media all and (max-width: 350px) and (orientation:portrait) {
+
+        &__item {
+
+            & a {
+
+                font-size: 3rem !important;
+
+            }
+
+
+        }
+
+    }
+
+    @media all and (max-width: 500px) and (orientation:portrait) {
+
+        &__item {
+
+            top: 25%;
+
+            font-size: 5rem;
+
+            @include setMarginTop(7rem);
+
+        }
+
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+
+        &__item {
+
+            top: 18%;
+
+            font-size: 8rem;
+
+            @include setMarginTop(13rem);
+
+        }
+
+    }
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+
+        &__item {
+
+            top: 18%;
+
+            font-size: 8rem;
+
+            @include setMarginTop(10rem);
+
+        }
+
+    }
+
+    @media all and (max-width: 350px) and (max-height:570px) and (orientation:portrait) {
+
+        &__item {
+
+            top: 25%;
+
+            font-size: 7rem;
+
+            @include setMarginTop(5rem);
+
+        }
+
+    }
+
+
+    @media all and (min-width:300px) and (max-width: 600px) and (orientation: landscape) {
+
+        &__item {
+
+            top: 12% !important;
+
+            font-size: 2rem !important;
+
+            @include setMarginTop(2rem);
+
+        }
+
+    }
+
+    @media all and (max-width: 900px) and (max-height: 500px) and (orientation:landscape) {
+
+        &__item {
+
+            top: 17%;
+
+            font-size: 3rem;
+
+            @include setMarginTop(5rem);
+
+
+        }
+
+    }
+
+}
+
+
+
+@media all and (min-width:769px) {
+
+    .edfx-toggle-button {
+
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+
+    }
+
+    .edfx-toggle-menu {
+
+        &>.menu-item {
+
+            top: 28%;
+
+        }
+
+    }
+
+}
+
+@keyframes kenBurns {
+
+    from {
+
+        transform: scale(1);
+
+    }
+
+    to {
+
+        transform: scale(1.5)
+    }
+
+}
