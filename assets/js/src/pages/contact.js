@@ -14,29 +14,36 @@ swapBGMenuSlide();
 
 const formData = fetchContactFormData();
 
-Object.keys(formData).forEach(key => {
-    switch (key) {
-        case "name":
-            formData[key].value = "Maximillian Heth";
+/**
+ * The commented-out code below is used strictly
+ * for mocking in the event that the contact form
+ * needs to be tested.
+ * 
+ */
 
-            break;
+// Object.keys(formData).forEach(key => {
+//     switch (key) {
+//         case "name":
+//             formData[key].value = "Maximillian Heth";
 
-        case "email":
-            formData[key].value = "maximillian.heth@gmail.com";
+//             break;
 
-            break;
+//         case "email":
+//             formData[key].value = "maximillian.heth@gmail.com";
 
-        case "subject":
-            formData[key].value = "Some subject";
+//             break;
 
-            break;
+//         case "subject":
+//             formData[key].value = "Some subject";
 
-        case "message":
-            formData[key].value = "An important message";
+//             break;
 
-            break;
-    }
-});
+//         case "message":
+//             formData[key].value = "An important message";
+
+//             break;
+//     }
+// });
 
 sendContactInfo(
     formData,
