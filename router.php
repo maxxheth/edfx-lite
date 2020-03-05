@@ -13,13 +13,26 @@ $root_url = $header . $root_uri;
 
 $trailingSlashRegex = '/(?=.*)\/$/';
 
+$blogSlugRegex = '/(blog)/';
+
 preg_match($trailingSlashRegex, $request, $requestMatches);
+
+preg_match($blogSlugRegex, $request, $blogSlugResults);
+
+/** This block of code removes trailing slashes from all URLs 
+ * except the home page URL. */
 
 if (is_array($requestMatches) && count($requestMatches) > 0 && $request != '/') {
 
     $request = preg_replace('/(?=.*)\/$/', '', $request);
 
     header('Location: ' . $request, 301);
+
+}
+
+if (is_array($blogSlugResults) && count($blogSlugResults) > 0) {
+
+    header('Location: /', 302);
 
 }
 
