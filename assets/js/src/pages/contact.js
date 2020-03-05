@@ -18,7 +18,7 @@ const formData = fetchContactFormData();
  * The commented-out code below is used strictly
  * for mocking in the event that the contact form
  * needs to be tested.
- * 
+ *
  */
 
 // Object.keys(formData).forEach(key => {

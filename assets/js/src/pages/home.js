@@ -41,6 +41,8 @@ typeWriterElems.forEach(elem => {
     if (backup !== null) backup.style.display = "none";
 });
 
+console.log("This is me adding a console.log statement.");
+
 footerLinkAnimation();
 renderMenu();
 flipCards();
