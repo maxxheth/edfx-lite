@@ -3,12 +3,11 @@
 error_reporting(-1);
 ini_set('display_errors', 1);
 
-
 $request = $_SERVER['REQUEST_URI'];
 
 $root_uri = $_SERVER['SERVER_NAME'];
 
-$header = 'http://';
+$header = 'https://';
 
 $root_url = $header . $root_uri;
 
