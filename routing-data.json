@@ -69,7 +69,7 @@
         },
 
         "wordpress": {
-            "requestURI": "/services/wordpress-development",
+            "requestURI": "/services/wordpress",
             "routeFileDir": "/views/services/wordpress.php"
         },
 
