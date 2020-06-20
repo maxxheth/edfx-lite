@@ -1,6 +1,6 @@
 /*! all exports used */
 
-/*! no static exports found */
+/*! exports provided: default */
 
 /*!***********************************!*\
   !*** ./assets/css/src/style.scss ***!

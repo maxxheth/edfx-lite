@@ -10,19 +10,19 @@ import init from "vanilla-ripplejs/lib";
 import { contactModalToggle } from "../global/modals";
 import { contactModalAJAX } from "../global/modals";
 
-// import Pristine from "pristinejs";
+import Pristine from "pristinejs";
 
-// const contactModalForm = document.querySelector(".contact-modal");
+const contactModalForm = document.querySelector(".contact-modal");
 
-// const pristineModal = new Pristine(contactModalForm);
+const pristineModal = new Pristine(contactModalForm);
 
-// contactModalForm.addEventListener("submit", event => {
-//     event.preventDefault();
+contactModalForm.addEventListener("submit", event => {
+    event.preventDefault();
 
-//     const isValid = pristineModal.validate();
+    const isValid = pristineModal.validate();
 
-//     console.log(isValid);
-// });
+    console.log(isValid);
+});
 
 const swiperContentArray = swiperSlideCreator({
     sliderContent: testimonialSliderContent,

@@ -2,7 +2,7 @@
 
 error_reporting(E_ALL);
 
-ini_set('display_errors', true);
+ini_set('display_errors', false);
 
 require_once dirname(__DIR__, 1) . '/vendor/autoload.php';
 
@@ -22,23 +22,21 @@ $POST = file_get_contents('php://input');
 
 $formData = json_decode($POST, true);
 
+// print_r(json_encode($formData));
+
 $POSTOrigin = $formData['origin'];
 
 if ($POSTOrigin === 'contactForm') {
-
     $subject = filter_var($formData['subject'], FILTER_SANITIZE_STRING | FILTER_SANITIZE_SPECIAL_CHARS);
-
 } elseif ($POSTOrigin === 'contactModule') {
-
-    $budget = filter_var($formData['budget'], FILTER_SANITIZE_STRING );
-
+    $budget = filter_var($formData['budget'], FILTER_SANITIZE_STRING);
 }
 
-$name = filter_var($formData['name'], FILTER_SANITIZE_STRING |  FILTER_SANITIZE_SPECIAL_CHARS );
+$name = filter_var($formData['name'], FILTER_SANITIZE_STRING |  FILTER_SANITIZE_SPECIAL_CHARS);
 
-$email = filter_var($formData['email'], FILTER_SANITIZE_EMAIL );
+$email = filter_var($formData['email'], FILTER_SANITIZE_EMAIL);
 
-$message = filter_var($formData['message'], FILTER_SANITIZE_STRING | FILTER_SANITIZE_SPECIAL_CHARS ); 
+$message = filter_var($formData['message'], FILTER_SANITIZE_STRING | FILTER_SANITIZE_SPECIAL_CHARS);
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
@@ -52,7 +50,7 @@ $mail->isSMTP();
 // SMTP::DEBUG_OFF = off (for production use)
 // SMTP::DEBUG_CLIENT = client messages
 // SMTP::DEBUG_SERVER = client and server messages
-$mail->SMTPDebug = SMTP::DEBUG_OFF;
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 //Set the hostname of the mail server
 $mail->Host = 'smtp.gmail.com';
@@ -86,6 +84,8 @@ $mail->addAddress('edfx@protonmail.com', 'EDFX');
 
 $mail->addAddress('admin@edfx.co', 'EDFX');
 
+// $mail->addAddress('maximillian.heth@gmail.com', 'EDFX');
+
 //Set the subject line
 $mail->Subject = isset($subject) ? $subject : 'Customer Inquiry';
 
@@ -93,16 +93,14 @@ $mail->Subject = isset($subject) ? $subject : 'Customer Inquiry';
 //convert HTML into a basic plain-text alternative body
 
 
-$msgHTML = ''; 
+$msgHTML = '';
 
 $msgHTML .= '<h2>Name</h2>' . '<p>' . $name . '</p><br>';
            
 $msgHTML .= '<h2>Email</h2>' . '<p>' . $email . '</p><br>';
 
 if (isset($budget)) {
-
     $msgHTML .= '<h2>Budget</h2>' . '<p>' . $budget . '</p><br>';
-
 }
             
 $msgHTML .= '<h2>Message</h2>' . '<p>' . $message . '</p>';
@@ -119,7 +117,7 @@ $mail->msgHTML($msgHTML);
 if (!$mail->send()) {
     print_r(json_encode(['mailer_error' => $mail->ErrorInfo, 'sentBool' => false]));
 } else {
-    print_r(json_encode(['status' => 'Message sent!', 'sentBool' => true]));
+    print_r(json_encode(['status' => 'Message sent!', 'sentBool' => true], true));
     //Section 2: IMAP
     //Uncomment these to save your message in the 'Sent Mail' folder.
     #if (save_mail($mail)) {

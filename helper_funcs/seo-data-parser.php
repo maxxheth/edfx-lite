@@ -6,12 +6,12 @@ ini_set('display_errors', 1);
 //file_get_contents(__DIR__ . '/seo-data.json')
 
 /**
- * 
+ *
  * The goal of this class is to provide utility methods for injecting SEO
  * data into pages efficiently.
- * 
- * There's a distinct 
- * 
+ *
+ * There's a distinct
+ *
  */
 
 class SEOToolBox
@@ -24,37 +24,28 @@ class SEOToolBox
 
     private static $pageSlugs = [];
 
-    private static $SEOData = null;
-
     private static $SEOTitle = null;
 
     private static $SEOMetaDescription = null;
 
-    private static function getKey() {
-
+    private static function getKey()
+    {
         $pageTypes = '(services|portfolio|testimonial)';
 
         preg_match('/^\/' . $pageTypes . '\/(?=\w+)/', $_SERVER['REQUEST_URI'], $keyMatches);
 
         if (is_array($keyMatches) && count($keyMatches) > 0) {
-
             $key = preg_replace('/^\/' . $pageTypes . '\/(?=\w+)/', '', $_SERVER['REQUEST_URI']);
-
         } else {
-            
             $key = preg_replace('/^\//', '', $_SERVER['REQUEST_URI']);
-        
         }
 
         return $key;
-
     }
 
-    public static function insertPageSlugs($pageSlugs = []) 
+    public static function insertPageSlugs($pageSlugs = [])
     {
-
         self::$pageSlugs = $pageSlugs;
-
     }
 
     public static function SEOParser($jsonDataPath)
@@ -83,7 +74,6 @@ class SEOToolBox
 
     public static function printCoreSEOData($type)
     {
-        
         $key = self::getKey();
 
         $SEOData = null;

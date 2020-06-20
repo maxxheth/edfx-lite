@@ -93,7 +93,7 @@ $weSpecSVG = file_get_contents(dirname(__DIR__, 1) . '/svg/we-build.svg');
         <!-- <h2 class="jarallax-title">We Get Results</h2> -->
         <!-- <div class="jarallax-svg-cont">
         
-            <span><?php //echo $weSpecSVG; ?></span>
+            <span><?php //echo $weSpecSVG;?></span>
 
         </div> -->
     </div>
@@ -154,7 +154,8 @@ $weSpecSVG = file_get_contents(dirname(__DIR__, 1) . '/svg/we-build.svg');
 
 
     <div id="jarallax-scene-02" class="jarallax"
-        style="background-image: url( '/images/discussing-plans-for-design-1_compressed.jpg')"></div>
+        style="background-image: url( '/images/discussing-plans-for-design-1_compressed.jpg')">
+    </div>
 
 
 

@@ -1,0 +1,21 @@
+{
+    "category-data": {
+        "wordpress-development": {
+            "routes": {
+                "requestURI": "/services/web-accessibility",
+                "routeFileDir": "/views/services/web-accessibility.php"
+            },
+            "posts": [
+            {
+                "how-to-migrate-wordpress-site": {
+                    "requestURI": "/blog/how-to-migrate-wordpress-site"
+                }
+            },
+            {
+                "fixing-crashed-wordpress-site": {
+                    "requestURI": "/blog/fixing-crashed-wordpress-site"
+                }
+            }
+        ]}
+    }
+}

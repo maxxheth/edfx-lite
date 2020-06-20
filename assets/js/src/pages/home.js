@@ -15,6 +15,20 @@ import { TextTypeFactory } from "../global/text-typer-factory";
 
 import { cardLineAnimator } from "../global/card-line-animator";
 
+import eventFaker from "../global/eventFaker";
+
+// const eventDispatcher = eventFaker(
+//     "mouseenter",
+//     event => {
+//         console.log("Event dispatched!");
+
+//         console.log({ event });
+//     },
+//     document.querySelectorAll(".edfx-toggle-menu__link")[0]
+// );
+
+// window.eventDispatcher = eventDispatcher;
+
 //import {isInViewport} from '../global/is-in-viewport';
 
 // import triggerEvent from '../helper-funcs/triggerEvent';

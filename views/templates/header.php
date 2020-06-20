@@ -19,8 +19,7 @@ if (!function_exists('get_header')) {
     function get_header()
     {
         global $root_url, $request;
-    }
-}
+
 
 ?>
 
@@ -29,7 +28,7 @@ if (!function_exists('get_header')) {
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html lang="en" class="no-js">
 <!--<![endif]-->
 
 
@@ -188,3 +187,5 @@ if (!function_exists('get_header')) {
 
     
 
+        }
+}

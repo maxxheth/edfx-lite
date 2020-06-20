@@ -13,7 +13,7 @@ const constraints = {
         format: {
             pattern: /[A-Za-z]+\s*[A-Za-z]*\s*/g,
             flags: "i",
-            message: "Please enter your name using letters only. Thanks!"
+            message: "Please enter your full name using letters only. Thanks!"
         }
     },
     emailAddress: {
@@ -185,20 +185,20 @@ export const contactModalAJAX = destination => {
 
         console.log({ name, email });
 
-        const isNotName = validate({ fullName: name }, constraints);
+        // const isNotName = validate({ fullName: name }, constraints);
 
         const isNotEmail = validate({ emailAddress: email }, constraints);
 
-        console.log({ isNotName, isNotEmail });
+        // console.log({ isNotName, isNotEmail });
 
-        if (isNotName) {
-            Swal.fire(
-                "Hang on a sec...",
-                "Please enter only letters, thanks!",
-                "warning"
-            );
-            return;
-        }
+        // if (isNotName) {
+        //     Swal.fire(
+        //         "Hang on a sec...",
+        //         "Please enter only letters, thanks!",
+        //         "warning"
+        //     );
+        //     return;
+        // }
 
         if (isNotEmail) {
             Swal.fire(
@@ -211,10 +211,12 @@ export const contactModalAJAX = destination => {
 
         if (message.length === 0) {
             Swal.fire(
-                "Hang on a sec",
+                "Hang on a sec...",
                 "Care to tell us how we can help you?",
                 "warning"
             );
+
+            return;
         }
 
         const payload = {
@@ -286,7 +288,15 @@ export const contactModalAJAX = destination => {
             PromisifiedAJAX.then(response => {
                 console.log({ response });
 
-                const { sentBool } = JSON.parse(response);
+                const breakRegex = /\n+(.*)/g;
+
+                const responseArr = response.match(breakRegex);
+
+                const JSONResponse = responseArr[responseArr.length - 1].replace(/\n+/g, ""); // eslint-disable-line
+
+                console.log(JSONResponse);
+
+                const { sentBool } = JSON.parse(JSONResponse);
 
                 console.log({ sentBool });
 
