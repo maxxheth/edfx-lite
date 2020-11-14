@@ -7,7 +7,7 @@ $request = $_SERVER['REQUEST_URI'];
 
 $root_uri = $_SERVER['SERVER_NAME'];
 
-$header = 'http://';
+$header = 'https://';
 
 $root_url = $header . $root_uri;
 
