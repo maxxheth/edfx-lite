@@ -7,10 +7,10 @@ import "simplebar";
 import tippy, { followCursor } from "tippy.js";
 
 tippy(document.querySelectorAll(".card--red-bg"), {
-    content: "Click to flip me over!",
-    followCursor: true,
-    plugins: [followCursor],
-    placement: "top"
+	content: "Click to flip me over!",
+	followCursor: true,
+	plugins: [followCursor],
+	placement: "top",
 });
 
 footerLinkAnimation();

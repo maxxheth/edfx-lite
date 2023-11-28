@@ -27,9 +27,16 @@
         "splash": {
             "requestURI": "/splash",
             "routeFileDir": "/views/splash.php"
+        },
+        "vcard-example":{
+            "requestURI": "/vcard-example",
+            "routeFileDir": "/assets/misc/vcards/vcard-example.vcf"
+        },
+        "qr-code": {
+          "requestURI": "/qr-code",
+          "routeFileDir": "/views/qr_code.php"
         }
     },
-
     "blog": {
         "hello-world": {
             "requestURI": "/hello-world"

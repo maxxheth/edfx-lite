@@ -3,3 +3,9 @@ images.zip
 node_modules
 vendor
 emrg
+wp-fast
+vhroot
+*.swp
+*.tar.bz2
+*.log
+.env

@@ -1,15 +1,15 @@
-const grabBgColors = regexStr => {
-    console.log(regexStr);
+const grabBgColors = (regexStr) => {
+	console.log(regexStr);
 
-    const numRegex = /[0-9]{1,3}/g;
+	const numRegex = /[0-9]{1,3}/g;
 
-    let newRegexStr = regexStr.match(numRegex);
+	let newRegexStr = regexStr.match(numRegex);
 
-    console.log(newRegexStr);
+	console.log(newRegexStr);
 
-    newRegexStr = newRegexStr.filter(num => num !== "");
+	newRegexStr = newRegexStr.filter((num) => num !== "");
 
-    return newRegexStr;
+	return newRegexStr;
 };
 
 export default grabBgColors;

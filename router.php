@@ -1,13 +1,21 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 error_reporting(-1);
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$app_mode = $_ENV['APP_MODE'];
+
 ini_set('display_errors', 1);
 
 $request = $_SERVER['REQUEST_URI'];
 
 $root_uri = $_SERVER['SERVER_NAME'];
 
-$header = 'https://';
+$header = $app_mode === 'production' ? 'https://' : 'http://';
 
 $root_url = $header . $root_uri;
 
@@ -64,6 +72,50 @@ $datasets = [$mainRoutingData, $blogRoutingData, $servicesRoutingData, $commonRo
 // foreach ($datasets as $dataset) {
 //     prettyPrint($dataset);
 // }
+
+
+if ($request === '/assets/misc/vcards/contact_0.vcf') {
+    $file = '/var/www/edfx.co/assets/misc/vcards/contact_0.vcf';
+
+    if (file_exists($file)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: text/vcard');
+        #header('Content-Disposition: inline; filename="'.basename($file).'"');
+        header('Content-Disposition: attachment; filename="'.basename($file).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($file));
+        readfile($file);
+        exit;
+    } else {
+        // The file does not exist, you can choose to redirect to a 404 page or something similar
+        header('HTTP/1.0 404 Not Found');
+        exit;
+    }
+}
+
+if ($request === '/assets/videos/pretty-girl.webm') {
+    $file = '/var/www/edfx.co/assets/videos/pretty-girl.webm';
+
+    if (file_exists($file)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: video/webm');
+        header('Content-Disposition: inline; filename="'.basename($file).'"'); // Display video inline
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($file));
+        readfile($file);
+        exit;
+    } else {
+        // The file does not exist, you can choose to redirect to a 404 page or something similar
+        header('HTTP/1.0 404 Not Found');
+        exit;
+    }
+}
+
+
 
 /**
  *

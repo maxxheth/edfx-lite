@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",            // Set to the ECMAScript version you're targeting
+    "module": "commonjs",          // Set to your module system (commonjs, es2015, etc.)
+    "allowJs": true,               // Allow JavaScript files to be compiled
+    "checkJs": true,               // Enable type checking for JavaScript files
+    "outDir": "./dist",            // Set the output directory for compiled files
+    "rootDir": "./src",            // Set the root directory of your project
+    "strict": true,                // Enable all strict type-checking options
+    "noEmit": true,                // Do not emit outputs (since you're using this for type-checking only)
+    "esModuleInterop": true,       // Enables compatibility with ES module import syntax in CommonJS modules
+    "skipLibCheck": true,          // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true // Ensure file names are consistent in case-sensitivity
+  },
+  "include": [
+    "./assets/js/src/*",  
+    "./assets/js/src/**/*", 
+    "./assets/js/src/**/**/*" 
+  ],
+  "exclude": [
+    "node_modules",
+    // You can exclude other directories or files as needed
+  ]
+}

@@ -1,7 +1,7 @@
-const getSiblings = elem => {
-    const children = [...elem.parentNode.childNodes];
+const getSiblings = (elem) => {
+	const children = [...elem.parentNode.childNodes];
 
-    return children.filter(child => child !== elem);
+	return children.filter((child) => child !== elem);
 };
 
 export default getSiblings;

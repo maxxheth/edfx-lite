@@ -4,42 +4,42 @@ import RippleFactoryInit from "./jquery.ripples.min.js";
 
 RippleFactoryInit($);
 
-const makeWaterRipples = elem => {
-    const $elem = $(elem);
+const makeWaterRipples = (elem) => {
+	const $elem = $(elem);
 
-    const menuToggleButton = document.querySelector(".edfx-toggle-button");
+	const menuToggleButton = document.querySelector(".edfx-toggle-button");
 
-    $elem.ripples();
+	$elem.ripples();
 
-    let isActive = false;
+	let isActive = false;
 
-    // setInterval(() => {
+	// setInterval(() => {
 
-    //     $elem.ripples('pause');
+	//     $elem.ripples('pause');
 
-    //     console.log('Pause!');
+	//     console.log('Pause!');
 
-    //     setTimeout(() => {
+	//     setTimeout(() => {
 
-    //         $elem.ripples('play');
+	//         $elem.ripples('play');
 
-    //         console.log('Play!');
+	//         console.log('Play!');
 
-    //     }, 5 * 1000)
+	//     }, 5 * 1000)
 
-    // }, 30 * 1000);
+	// }, 30 * 1000);
 
-    menuToggleButton.addEventListener("click", () => {
-        if (!isActive) {
-            $elem.ripples("hide");
+	menuToggleButton.addEventListener("click", () => {
+		if (!isActive) {
+			$elem.ripples("hide");
 
-            isActive = true;
-        } else {
-            $elem.ripples("show");
+			isActive = true;
+		} else {
+			$elem.ripples("show");
 
-            isActive = false;
-        }
-    });
+			isActive = false;
+		}
+	});
 };
 
 export default makeWaterRipples;

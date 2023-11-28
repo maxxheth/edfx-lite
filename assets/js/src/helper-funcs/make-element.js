@@ -1,1 +1,1 @@
-export const makeElement = elemType => document.createElement(elemType);
+export const makeElement = (elemType) => document.createElement(elemType);

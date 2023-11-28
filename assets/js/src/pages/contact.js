@@ -46,8 +46,8 @@ const formData = fetchContactFormData();
 // });
 
 sendContactInfo(
-    formData,
-    `${location.protocol}//${location.host}/helper_funcs/email-relay-contact.php`
+	formData,
+	`${location.protocol}//${location.host}/helper_funcs/email-relay-contact.php`,
 );
 
 init();

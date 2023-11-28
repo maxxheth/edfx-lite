@@ -15,10 +15,10 @@ import { checkType } from "../helper-funcs/checktype";
 
 export const state = { prop: ["value"] };
 
-export const setState = state => newProps => {
-    return produce(state, newState => {
-        if (newState !== undefined && checkType(newState) === "array") {
-            newState.push(newProps);
-        }
-    });
+export const setState = (state) => (newProps) => {
+	return produce(state, (newState) => {
+		if (newState !== undefined && checkType(newState) === "array") {
+			newState.push(newProps);
+		}
+	});
 };

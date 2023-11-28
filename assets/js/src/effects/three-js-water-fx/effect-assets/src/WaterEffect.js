@@ -2,11 +2,11 @@ import * as THREE from "three";
 import { Effect } from "postprocessing";
 
 export class WaterEffect extends Effect {
-  constructor(options = {}) {
-    super("WaterEffect", fragment, {
-      uniforms: new Map([["uTexture", new THREE.Uniform(options.texture)]])
-    });
-  }
+	constructor(options = {}) {
+		super("WaterEffect", fragment, {
+			uniforms: new Map([["uTexture", new THREE.Uniform(options.texture)]]),
+		});
+	}
 }
 export default WaterEffect;
 

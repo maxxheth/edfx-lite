@@ -13,6 +13,7 @@
         "league/oauth2-google": "^3.0",
         "symfony/polyfill-mbstring": "^1.13",
         "zaininnari/html-minifier": "^0.4.2",
-        "guzzlehttp/guzzle": "^6.5"
+        "guzzlehttp/guzzle": "^6.5",
+        "vlucas/phpdotenv": "^5.6"
     }
 }
