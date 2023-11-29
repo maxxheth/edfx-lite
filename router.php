@@ -5,7 +5,12 @@ require __DIR__ . '/vendor/autoload.php';
 error_reporting(-1);
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
 $dotenv->load();
+
+$carbon = new \Carbon\Carbon();
+
+$today = $carbon->now();
 
 $app_mode = $_ENV['APP_MODE'];
 
@@ -115,8 +120,6 @@ if ($request === '/assets/videos/pretty-girl.webm') {
     }
 }
 
-
-
 /**
  *
  * Reminder: The routing logic needs to be adjusted to use markers instead of
@@ -146,21 +149,26 @@ foreach ($commonRoutingData as $routingDataset) {
     if ($request != $routingDataset['requestURI']) {
         continue;
     } else {
+
+        // Check if the "publishOn" property exists and if its date is greater than today
+        if (isset($routingDataset['publishOn'])) {
+            $publishOn = new $carbon($routingDataset['publishOn']);
+            if ($publishOn->greaterThan($today)) {
+                header('Location: /blog', 302);
+                continue;
+            }
+        }
+
         switch ($routingDataset['marker']) {
-
             case 'main':
-                
                 require __DIR__ . $routingDataset['routeFileDir'];
-
             break;
 
             case 'services':
-
                 require __DIR__ . $routingDataset['routeFileDir'];
-            
             break;
-            case 'blog':
 
+            case 'blog':
                 renderMarkdownPost($routingDataset['requestURI']);
         }
 

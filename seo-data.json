@@ -97,6 +97,12 @@
             "metaDescription": "This is the meta description for the How To Migrate Your WordPress Site test page.",
             "postExcerpt": "Hey there, this is an article excerpt!",
             "publishedOn": "12/08/2019"
+        },
+        "local-seo-basics": {
+            "title": "Local SEO Basics",
+            "metaDescription": "This is the meta description for the Local SEO Basics test page.",
+            "postExcerpt": "Hey there, this is an article excerpt!",
+            "publishedOn": "12/08/2019"
         }
     }
 }

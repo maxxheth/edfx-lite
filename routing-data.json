@@ -61,6 +61,10 @@
         },
         "how-to-migrate-wordpress-site": {
             "requestURI": "/how-to-migrate-wordpress-site"
+        },
+        "local-seo-basics": {
+            "requestURI": "/local-seo-basics",
+            "publishOn": "2023-12-02"
         }
     },
 

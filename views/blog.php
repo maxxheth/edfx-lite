@@ -20,10 +20,17 @@ $blogURLRoutes = $routingData['blog'];
     <?php foreach($blogURLRoutes as $routeKey => $route) : ?>
 
         <?php 
-            
-            $blogTitle = $seoBlogArticleData[$routeKey]['title']; 
 
-            $blogDescription = $seoBlogArticleData[$routeKey]['metaDescription'];
+            if (isset($route['publishOn'])) {
+                $publishOn = new $carbon($route['publishOn']);
+                if ($publishOn->greaterThan($today)) {
+                    break;
+                }
+            }
+            
+            $blogTitle = $seoBlogArticleData[$routeKey]['title'] ?? ''; 
+
+            $blogDescription = $seoBlogArticleData[$routeKey]['metaDescription'] ?? '';
         
         ?>
 
