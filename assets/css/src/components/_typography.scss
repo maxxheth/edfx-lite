@@ -90,15 +90,20 @@ a {
 // 	padding: 0;
 // }
 
-ol,
-ul {
+ol.no-style,
+ul.no-style {
 	margin: 0;
 	padding: 0;
 }
 
-li {
+li.no-style {
 	list-style-type: none;
 }
+
+// li {
+// 	margin-left: 1rem;
+// }
+
 
 hr {
 	border: 0;

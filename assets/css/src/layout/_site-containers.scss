@@ -26,6 +26,9 @@
 
 	@include bg-fb;
 
+	display: flex; 
+	flex-direction: column;
+
 	&--bg-elem {
 		background-image: url(http://edfx-lite.test/images/Dallas_Skyline_with_Arts_District_rs.jpg);
 		background-position: center top;
